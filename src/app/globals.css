@@ -2,6 +2,12 @@
 @plugin "daisyui";
 
 :root {
+  --color-primary:#021814;
+  --color-base-100:#0b0b0b;
+  --color-base-200:#3C3939;
+  --color-accent:#73737380;
+  --color-primary-content:#ffffffb3;
+  --color-base-content:#ffffff;
   --background: #ffffff;
   --foreground: #171717;
 }
