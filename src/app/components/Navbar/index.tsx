@@ -5,7 +5,8 @@ export function NavBarLoader() {
     { name: 'Home', url: '#',  },
     { name: 'About', url: '',},
     { name: 'Projects', url: '#', },
-    { name: 'Resume', url: '#',}
+    { name: 'Resume', url: '#',},
+    { name: 'Resumes', url: '#',}
   ]
 
   return <NavBar items={navItems} />

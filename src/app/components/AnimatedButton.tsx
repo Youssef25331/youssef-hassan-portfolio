@@ -7,7 +7,7 @@ function AnimatedButton({ text }: { text?: string }) {
 
   const variants = {
     initial: { width: 36, height: 36, x: 0, },
-    fill: { width: "130%", height: 50, x: 10, color: "#000", }
+    fill: { width: "130%", height: 50, x: 10}
   }
 
   return (
@@ -21,7 +21,7 @@ function AnimatedButton({ text }: { text?: string }) {
       <motion.div
         animate={controls}
         variants={variants}
-        transition={{ duration: 0.2, ease: "easeInOut" }}
+        transition={{ duration: 0.3, ease: "circOut" }}
         className='-z-1 right-1 w-9 h-9 bg-white/80 absolute rounded-4xl p-1'>
       </motion.div>
       <div
