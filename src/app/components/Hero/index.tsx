@@ -1,0 +1,38 @@
+import AnimatedButton from "../AnimatedButton"
+import { BackgroundPaths } from "./paths"
+import { Sparkles } from "./sparkles"
+
+export default function Hero() {
+  return (
+    <div className="h-screen w-full overflow-hidden flex content-center">
+      <div className="fixed -z-1 h-full w-full overflow-hidden [mask-image:radial-gradient(50%_50%,white,transparent)]">
+        <div className="absolute inset-0 before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,var(--color-primary),transparent_70%)] before:opacity-100" />
+      </div>
+      <div className="mx-auto mt-70 w-full max-w-4xl">
+        <div className="text-center text-foreground ">
+          <span className="text-5xl font-bold">
+            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+          </span>
+          <br />
+          <div className="mt-6">
+            <span className="text-white/70">
+              Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
+            </span>
+          </div >
+        </div>
+        <div className="mt-10 flex justify-center">
+          <AnimatedButton text="Get In Touch" />
+        </div>
+
+        {/* <Sparkles */}
+        {/*   density={1200} */}
+        {/*   className="absolute -z-1 inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]" */}
+        {/*   color={"#FFF"} */}
+        {/* ></Sparkles> */}
+      </div>
+      <BackgroundPaths />
+    </div>
+  )
+}
+
+
