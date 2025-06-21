@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="absolute -z-1 h-full w-full overflow-hidden [mask-image:radial-gradient(0%,white,transparent)]">
         <div className="absolute inset-0 before:absolute before:inset-0 -top-50 before:bg-[radial-gradient(circle_at_center,var(--color-primary),transparent_40%)] before:opacity-100" />
       </div>
-      <div className="mx-auto mt-70 w-full max-w-4xl">
+      <div className="mx-auto mt-55 w-full max-w-4xl">
         <div className="text-center text-foreground ">
           <span className="text-5xl font-bold">
             Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.

@@ -6,7 +6,7 @@ import Stack from "./components/Stack";
 
 export default function Home() {
   return (
-    <main>
+    <main className="scroll-smooth">
       <NavBarLoader />
       <Hero />
       <Stack/>

@@ -7,7 +7,7 @@ function AnimatedButton({ text }: { text?: string }) {
 
   const variants = {
     initial: { width: 36, height: 36, x: 0, },
-    fill: { width: "130%", height: 50, x: 10}
+    fill: { width: "130%", height: '130%', x: 10}
   }
 
   return (
