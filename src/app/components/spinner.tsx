@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 function Spinner() {
   return (
-    <motion.div animate={{ rotate: [0, 360] }} transition={{ repeat: Infinity, duration: 3, ease: "linear" }} className="w-fit h-fit">
+    <motion.div animate={{ rotate: [0, 360] }} transition={{ repeat: Infinity, duration: 5, ease: "linear" }} className="w-fit h-fit">
       <Slack className='size-6 shadow-base-100' />
     </motion.div>
   )

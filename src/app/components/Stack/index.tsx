@@ -1,6 +1,6 @@
 import React from 'react'
 import TechGroup from './teach-group'
-import Spinner from '../spinner'
+import Spinner from '../Spinner'
 
 function Stack() {
   const frontend = {
