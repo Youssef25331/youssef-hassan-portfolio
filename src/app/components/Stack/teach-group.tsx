@@ -33,7 +33,7 @@ const TechItem = ({ item, index }: TechItemProps) => {
         const elementTop = ref.current.offsetTop
         const viewportHeight = window.innerHeight
         const viewportBottom = scrollY.get() + viewportHeight
-        const triggerDistance = viewportHeight / 6
+        const triggerDistance = viewportHeight / 5
         const progress = (viewportBottom - elementTop) / triggerDistance
         const clampedProgress = Math.min(Math.max(progress, 0), 1)
         opacity.set(clampedProgress)

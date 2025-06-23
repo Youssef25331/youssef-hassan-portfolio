@@ -27,9 +27,9 @@ const SmoothScroller: React.FC<{ children: React.ReactNode }> = ({ children, }) 
   const { scrollYProgress } = useScroll();
 
   const smoothProgress = useSpring(scrollYProgress, {
-    mass: 0.1,
-    stiffness: 100,
-    damping: 20,
+    mass: 0.0001,
+    stiffness: 1000,
+    damping: 100,
     resDelta: 0.001
   })
 

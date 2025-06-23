@@ -12,6 +12,7 @@
     "-": "^0.0.1",
     "@fontsource-variable/outfit": "^5.2.6",
     "@tsparticles/react": "^3.0.0",
+    "cobe": "^0.6.4",
     "D": "^1.0.0",
     "daisyui": "^5.0.43",
     "framer-motion": "^12.18.1",

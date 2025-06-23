@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <div className="h-screen w-full overflow-hidden flex content-center">
       <div className="absolute -z-1 h-full w-full overflow-hidden [mask-image:radial-gradient(0%,white,transparent)]">
-        <div className="absolute -z-1 inset-0 before:absolute before:inset-0 -top-200 bg-[radial-gradient(circle_at_center,#021318_0%,#0b0b0b_40%,transparent_70%)] before:opacity-100" />
+        <div className="absolute -z-1 inset-0 before:absolute before:inset-0  bg-[radial-gradient(circle_at_top,#021318_0%,#0b0b0b_15%,transparent_70%)] before:opacity-100" />
         <Sparkles
           density={1200}
           className="absolute -z-1 inset-x-0 -0  w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
