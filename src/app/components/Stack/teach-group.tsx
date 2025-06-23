@@ -1,37 +1,113 @@
 "use client"
-import React from 'react'
+// Works well for now but should concider moving to gsap for better animations
+
+import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
+import { motion, useScroll, useMotionValue } from 'framer-motion'
+
+interface TechItemProps {
+  item: TechItem
+  index: number
+}
 
 interface TechItem {
   name: string
   icon?: string
 }
+
 interface StackGroup {
   groupName: string
   items: TechItem[]
 }
-const TechGroup = ({ group }: { group: StackGroup }) => {
+
+const TechItem = ({ item, index }: TechItemProps) => {
+  const ref = useRef<HTMLDivElement>(null)
+  const opacity = useMotionValue(0)
+  const initialY = 20 + (index % 3 * 20)
+  const y = useMotionValue(initialY)
+  const { scrollY } = useScroll()
+
+  useEffect(() => {
+    const updateAnimation = () => {
+      if (ref.current) {
+        const elementTop = ref.current.offsetTop
+        const viewportHeight = window.innerHeight
+        const viewportBottom = scrollY.get() + viewportHeight
+        const triggerDistance = viewportHeight / 6
+        const progress = (viewportBottom - elementTop) / triggerDistance
+        const clampedProgress = Math.min(Math.max(progress, 0), 1)
+        opacity.set(clampedProgress)
+        y.set(initialY * (1 - clampedProgress))
+      }
+    }
+
+    updateAnimation() // Set initial values
+    const unsubscribe = scrollY.onChange(updateAnimation)
+    return () => unsubscribe()
+  }, [scrollY, opacity, y, initialY])
 
   return (
-    <div className='flex justify-center gap-50'>
-      <h1 className='text-5xl font-bold text-shadow-main basis-[100%] flex pl-[12.5%]'>{group.groupName}</h1>
-      <div className='flex flex-wrap basis-[100%] gap-x-2 gap-y-2'>
-        {group.items.map((item, index) => {
-          return (
-            <>
-              <div className={` ${index % 3 == 0 ? "basis-full" : ""}`} ></div>
-              <div className={`flex  gap-2`} key={item.name}>
-                <div className="relative h-8 w-8 flex">
-                  <Image layout={'fill'} objectFit={'contain'} src={item.icon || "/tech/react.png"} alt={item.name} />
-                </div>
-                <div className='text-2xl text-white/70'>{item.name}</div>
-              </div>
-            </>
-          )
-        })}
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: initialY }}
+      style={{ opacity, y }}
+      className="flex gap-2"
+      key={item.name}
+    >
+      <div className="relative h-8 w-8 flex">
+        <Image layout="fill" objectFit="contain" src={item.icon || "/tech/react.png"} alt={item.name} />
+      </div>
+      <div className="text-2xl text-white/70">{item.name}</div>
+    </motion.div>
+  )
+}
+
+const TechGroup = ({ group }: { group: StackGroup }) => {
+  const h1Ref = useRef<HTMLHeadingElement>(null)
+  const h1Opacity = useMotionValue(0)
+  const h1InitialY = 20
+  const h1Y = useMotionValue(h1InitialY)
+  const { scrollY } = useScroll()
+
+  useEffect(() => {
+    const updateH1Animation = () => {
+      if (h1Ref.current) {
+        const elementTop = h1Ref.current.offsetTop
+        const viewportHeight = window.innerHeight
+        const viewportBottom = scrollY.get() + viewportHeight
+        const triggerDistance = viewportHeight / 2
+        const progress = (viewportBottom - elementTop) / triggerDistance
+        const clampedProgress = Math.min(Math.max(progress, 0), 1)
+        h1Opacity.set(clampedProgress)
+        h1Y.set(h1InitialY * (1 - clampedProgress))
+      }
+    }
+
+    updateH1Animation() // Set initial values
+    const unsubscribe = scrollY.onChange(updateH1Animation)
+    return () => unsubscribe()
+  }, [scrollY, h1Opacity, h1Y])
+
+  return (
+    <div className="flex justify-center gap-50">
+      <motion.h1
+        ref={h1Ref}
+        initial={{ opacity: 0, y: h1InitialY }}
+        style={{ opacity: h1Opacity, y: h1Y }}
+        className="text-5xl font-bold text-shadow-main basis-[100%] flex pl-[12.5%]"
+      >
+        {group.groupName}
+      </motion.h1>
+      <div className="flex flex-wrap basis-[100%] gap-x-2 gap-y-2">
+        {group.items.map((item, index) => (
+          <React.Fragment key={item.name}>
+            {index % 3 === 0 && <div className="basis-full"></div>}
+            <TechItem item={item} index={index} />
+          </React.Fragment>
+        ))}
       </div>
     </div>
   )
 }
 
-export default TechGroup 
+export default TechGroup

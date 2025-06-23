@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <NavBarLoader />
       <SmoothScroller>
-        <main className="scroll-smooth">
+        <main>
           <Hero />
           <Stack />
         </main>
