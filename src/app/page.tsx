@@ -10,12 +10,12 @@ export default function Home() {
     <>
       <NavBarLoader />
       {/* <SmoothScroller> */}
-        <main className="flex flex-col gap-10">
-          <Hero />
-          <Stack />
-          <Widgets />
-          <div className="h-100"></div>
-        </main>
+      <main className="flex flex-col gap-10">
+        <Hero />
+        <Stack />
+        <Widgets />
+        <div className="h-100"></div>
+      </main>
       {/* </SmoothScroller> */}
     </>
   );
