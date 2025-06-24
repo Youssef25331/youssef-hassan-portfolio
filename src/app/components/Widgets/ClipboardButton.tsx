@@ -6,20 +6,18 @@ import { motion } from 'framer-motion'
 function ClipboardButton() {
   const [copied, setCopied] = useState(false)
   useEffect(() => {
-    setTimeout(() => setCopied(false), 3000)
+    setTimeout(() => setCopied(false), 5000)
   }, [copied])
 
   return (
     <motion.div onClick={() => {
-      if (!copied) {
-        setCopied(true)
-        navigator.clipboard.writeText("yyoussef25331@gmail.com")
-      }
+      setCopied(true)
+      navigator.clipboard.writeText("yyoussef25331@gmail.com")
     }} className='flex items-center gap-2 inset-shadow-[0_0px_20px_rgba(30,30,30,1)] transition duration-200 cursor-pointer rounded-lg px-4 py-3'>
 
       {!copied ? <LucideCopy className='size-4' /> : <LucideCheck />}
       {!copied ? "yyoussef25331@gmail.com" : "Hope to hear from you soon"}
-      <motion.div animate={{ y: copied ? 0 : 140 }} className="fixed left-10 border border-base-200 bottom-15 w-70 h-13 bg-[#131313] z-100 rounded-md flex p-2">
+      <motion.div animate={{ y: copied ? 0 : 140, opacity: copied ? 1 : 0 }} transition={{ duration: 0.8, ease: "backInOut" }} className="fixed left-10 border border-base-200 bottom-15 w-70 h-13 bg-[#131313] z-100 rounded-md flex p-2">
         <div className="flex justify-start items-center gap-3">
           <LucideCheckCircle className='size-4' />
           <div>
