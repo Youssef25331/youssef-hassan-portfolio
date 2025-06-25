@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Stack from "./components/Stack";
 import SmoothScroller from "./components/SmoothScroller";
 import Widgets from "./components/Widgets";
+import Showcase from "./components/Showcase";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Stack />
         <Widgets />
+        <Showcase />
         <div className="h-100"></div>
       </main>
       {/* </SmoothScroller> */}

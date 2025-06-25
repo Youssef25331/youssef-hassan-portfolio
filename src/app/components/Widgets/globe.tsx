@@ -104,7 +104,7 @@ export function Globe({
     >
       <canvas
         className={
-          "relative -translate-x-[28%] translate-y-[8%] size-220 opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          "relative -translate-x-[23%] translate-y-[6%] size-180 opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         }
         ref={canvasRef}
         onPointerDown={(e) =>
