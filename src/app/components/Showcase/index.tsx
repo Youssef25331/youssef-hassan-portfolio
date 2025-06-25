@@ -1,3 +1,4 @@
+import { url } from 'inspector'
 import React from 'react'
 
 const Showcase = () => {
@@ -7,15 +8,30 @@ const Showcase = () => {
       <div className="flex flex-col justify-center gap-8">
         <h1 className='text-6xl text-shadow-main text-center'>Projects i worked on</h1>
         <div className="flex flex-row justify-center gap-6">
-          <div className="relative flex bg-base-300 w-150 h-130 justify-center items-center rounded-3xl border border-base-200"
-          >
-            <div className="absolute inset-x-0 top-0 w-full h-px"
-              style={{
-                background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
-              }}
-            ></div>
-            <div className="relative bg-cyan-900 w-146 h-126 rounded-2xl" style={{ background: "linear-gradient(180deg,rgba(6, 44, 61, 1) 0%, rgba(9, 68, 94, 1) 52%, rgba(11, 91, 125, 1) 93%, rgba(21, 172, 237, 1) 100%)" }}>
-              <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
+          <div className="flex flex-col gap-8">
+
+            <div className="relative flex bg-[#121212] w-185 h-140 p-2 justify-center items-center rounded-3xl border border-base-200">
+              <div className="absolute inset-x-0 top-0 w-full h-px"
+                style={{
+                  background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
+                }}
+              ></div>
+              <div className="relative flex overflow-hidden justify-center items-end bg-cyan-900 w-full h-full rounded-2xl" style={{ background: "linear-gradient(175deg,#0e282a 83%, #267076 100%)" }}>
+                <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
+                <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] shadow-[0_0px_45px_#287176] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'>
+                  <img className='rounded-t-sm w-full h-full object-fill' src={"https://framerusercontent.com/images/eBewXVthrkfU83ygkD85hGPo.png"} />
+                </div>
+              </div>
+            </div>
+            <div className="relative flex bg-base-300 w-150 h-130 justify-center items-center rounded-3xl border border-base-200">
+              <div className="absolute inset-x-0 top-0 w-full h-px"
+                style={{
+                  background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
+                }}
+              ></div>
+              <div className="relative bg-cyan-900 w-146 h-126 rounded-2xl" style={{ background: "linear-gradient(180deg,rgba(6, 44, 61, 1) 0%, rgba(9, 68, 94, 1) 52%, rgba(11, 91, 125, 1) 93%, rgba(21, 172, 237, 1) 100%)" }}>
+                <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
+              </div>
             </div>
           </div>
           <div className="sticky">

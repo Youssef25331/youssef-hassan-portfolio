@@ -17,7 +17,7 @@ function ClipboardButton() {
 
       {!copied ? <LucideCopy className='size-4' /> : <LucideCheck />}
       {!copied ? "yyoussef25331@gmail.com" : "Hope to hear from you soon"}
-      <motion.div animate={{ y: copied ? 0 : 140, opacity: copied ? 1 : 0 }} transition={{ duration: 0.8, ease: "backInOut" }} className="fixed left-10 border border-base-200 bottom-15 w-70 h-13 bg-[#131313] z-100 rounded-md flex p-2">
+      <motion.div initial={{ y: 140, opacity: 0 }} animate={{ y: copied ? 0 : 140, opacity: copied ? 1 : 0 }} transition={{ duration: 0.8, ease: "backInOut" }} className="fixed left-10 border border-base-200 bottom-15 w-70 h-13 bg-[#131313] z-100 rounded-md flex p-2">
         <div className="flex justify-start items-center gap-3">
           <LucideCheckCircle className='size-4' />
           <div>
