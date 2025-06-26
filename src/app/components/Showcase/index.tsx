@@ -1,5 +1,5 @@
-import { url } from 'inspector'
 import React from 'react'
+import Image from 'next/image'
 
 const Showcase = () => {
   return (
@@ -41,31 +41,70 @@ const Showcase = () => {
             <div className="sticky top-40">
               <div className="flex">
                 <div className="my-4 mr-4 h-1 min-w-6 rounded-full bg-blue-700"></div>
-                <div className="flex flex-col w-100 gap-3">
+                <div className="flex flex-col w-100 gap-8">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2">
+                    <h1 className='text-3xl'>Project name</h1>
+                    <div className="flex flex-col">
+                      <p className='text-sm text-base-content/70'>Lorem ipsum dolor sit amet,
+                        officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia.</p>
+                    </div>
+                    </div>
+                    <div className='flex flex-col gap-2'>
+                      <div className="flex items-center">
+                        <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
+                        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
+                        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+                      </div>
+                      <div className="flex items-center">
+                        <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
+                        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+                      </div>
+                    </div>
+                  </div>
 
-                  <h1 className='text-3xl'>Project name</h1>
-                  <div className="flex flex-col">
-                    <p className='text-sm text-base-content/70'>Lorem ipsum dolor sit amet,
-                      officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia.</p>
-                  </div>
-                  <div className='flex flex-col gap-2'>
-                    <div className="flex items-center">
-                      <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
-                      <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
-                      <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
-                      <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap">
-                    <div className="flex justify-center border border-[#716C6C] rounded-3xl bg-base-300 p-2 font-thin">
+                  <div className="flex flex-wrap w-120 gap-2">
+                    <div className="flex justify-center border border-[#716C6C] rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
+                      <div className="relative w-5">
+                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
+                      </div>
                       <p>
-                        Tailwind css
+                        Tailwind CSS
+                      </p>
+                    </div>
+                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
+                      <div className="relative w-5">
+                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
+                      </div>
+                      <p>
+                        Tailwind CSS
+                      </p>
+                    </div>
+                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
+                      <div className="relative w-5">
+                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
+                      </div>
+                      <p>
+                        Tailwind CSS
+                      </p>
+                    </div>
+                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
+                      <div className="relative w-5">
+                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
+                      </div>
+                      <p>
+                        Tailwind CSS
+                      </p>
+                    </div>
+                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
+                      <div className="relative w-5">
+                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
+                      </div>
+                      <p>
+                        Tailwind CSS
                       </p>
                     </div>
                   </div>

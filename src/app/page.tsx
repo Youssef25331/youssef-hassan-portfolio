@@ -5,6 +5,8 @@ import Stack from "./components/Stack";
 import SmoothScroller from "./components/SmoothScroller";
 import Widgets from "./components/Widgets";
 import Showcase from "./components/Showcase";
+import About from "./components/About";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
         <Stack />
         <Widgets />
         <Showcase />
+        <About />
+        <Footer/>
         <div className="h-100"></div>
       </main>
       {/* </SmoothScroller> */}
