@@ -16,7 +16,7 @@ export default function Home() {
         <Stack />
         <Widgets />
         <Showcase />
-        <div className="h-1000"></div>
+        <div className="h-100"></div>
       </main>
       {/* </SmoothScroller> */}
     </>
