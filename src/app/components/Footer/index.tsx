@@ -27,13 +27,7 @@ const Footer = () => {
       <div id="footer-bottom" className='z-10 -mt-15 '>
         <div className="px-40 flex justify-between  mb-10">
           <div className="flex flex-col gap-2">
-            <svg className='fill-white size-9 mb-2'
-              shapeRendering="geometricPrecision"
-              textRendering="geometricPrecision"
-              viewBox="0 0 60 51.5"
-            >
-              <path d="M-.026 0H9.7l17.6 29.127V51.5h-8.357V30.741L-.026 0ZM33.413 15.467l-9.691-.124L32.895 0h10.332l-9.814 15.467ZM33.793 22.23v6.897H51.72V51.5H60V0h-8.279v22.23H33.793Z" />
-            </svg>
+            <img src="/yh.svg" alt="Vercel Logo" className='size-10' />
             <p className='text-sm text-white/70 '>I'm Youssef - a full-stack developer,<br />freelancer & problem solver.<br />Thanks for checking out my site!</p>
             <p className='text-sm text-white/70 '>© {new Date().getFullYear()} Youssef Hassan | Built with Next.js</p>
             <div className="flex gap-2 text-white/70">
