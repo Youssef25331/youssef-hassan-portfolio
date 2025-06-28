@@ -21,8 +21,8 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
 
     <div className="flex">
-      <div className="fixed top-0 mt-7 ml-38 z-10">
-        <img src="/yh.svg" alt="Logo" className='size-8' />
+      <div className="fixed top-0 mt-7 ml-30 z-10 lg:hidden">
+        <img src="/yh.svg" alt="Logo" className='size-7' />
       </div>
       <div
         className={`fixed top-0 left-1/2 -translate-x-1/2 z-200 mb-6 pt-6 ${className}`
