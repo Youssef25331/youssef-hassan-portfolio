@@ -20,7 +20,6 @@ export default function Home() {
         <Showcase />
         <About />
         <Footer/>
-        <div className="h-100"></div>
       </main>
       {/* </SmoothScroller> */}
     </>

@@ -20,7 +20,7 @@ export function NavBar({ items, className }: NavBarProps) {
 
   return (
     <div
-      className={`fixed top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6 ${className}`
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-200 mb-6 sm:pt-6 ${className}`
       }
     >
       <div className="flex items-center gap-2 bg-background/5 border border-border border-base-200 backdrop-blur-lg py-1 px-1.5 rounded-full shadow-lg">
