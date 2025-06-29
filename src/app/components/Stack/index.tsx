@@ -24,7 +24,7 @@ function Stack() {
 
   return (
     <main id='stack'>
-      <div className='flex gap-2 text-shadow-main text-xl pl-[12.5%]'>
+      <div className='flex gap-2 text-shadow-main text-2xl pl-[16%]'>
         <Spinner />
         <h1 className=''>MY STACK</h1>
       </div>
