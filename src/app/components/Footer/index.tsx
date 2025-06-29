@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
       </div>
       <div id="footer-bottom" className='z-10 -mt-15 '>
-        <div className="px-40 flex justify-between  mb-10">
+        <div className="px-40 flex justify-between mb-10">
           <div className="flex flex-col gap-2">
             <img src="/yh.svg" alt="Vercel Logo" className='size-9 -ml-2 mb-2' />
             <p className='text-sm text-white/70 '>I'm Youssef - a full-stack developer,<br />freelancer & problem solver.<br />Thanks for checking out my site!</p>

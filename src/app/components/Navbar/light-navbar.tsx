@@ -21,7 +21,7 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
 
     <div className="flex">
-      <div className="fixed top-0 mt-7 ml-30 z-10 lg:hidden">
+      <div className="fixed top-0 mt-7 ml-30 z-10">
         <img src="/yh.svg" alt="Logo" className='size-7' />
       </div>
       <div
