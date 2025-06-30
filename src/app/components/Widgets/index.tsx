@@ -25,9 +25,11 @@ const Widgets = () => {
 
   return (
     <main className='w-full max-w-7xl px-4 mx-auto'>
-      <div className='mx-auto grid w-full grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] mb-20 md:my-20 '>
-        <div className="relative w-full flex justify-between items-center inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 cursor-grab border rounded-3xl border-base-200 col-span-4">
-          <ActivityCalendar colorScheme='dark' data={data} />
+      <div className='grid w-full grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] mb-20 md:my-20 '>
+        <div className="inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-4">
+          <div className='w-full h-full flex justify-center  items-center'>
+            <ActivityCalendar colorScheme='dark' data={data} />
+          </div>
         </div>
         {/* <div className='flex flex-row gap-4'> */}
         {/*   <div className='inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 cursor-grab  justify-start border rounded-3xl border-base-200 w-98 overflow-hidden h-73'> */}
