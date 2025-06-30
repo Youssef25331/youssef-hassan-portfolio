@@ -29,7 +29,9 @@ export default function Home() {
       <main className="flex flex-col gap-10">
         <Hero />
         <Stack />
-        <Widgets />
+        <div className="my-30">
+          <Widgets />
+        </div>
         <Showcase />
         <About />
         <Footer />

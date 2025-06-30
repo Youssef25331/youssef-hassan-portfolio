@@ -47,7 +47,7 @@ export function NavBar({ items, className }: NavBarProps) {
                   <motion.div
                     layoutId="lamp"
                     className="absolute inset-0 w-full bg-base-content/5 rounded-full -z-10"
-                    initial={false}
+                    initial={true}
                     transition={{
                       type: "spring",
                       stiffness: 300,
