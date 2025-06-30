@@ -8,13 +8,13 @@ export default function Hero() {
       <div className="absolute -z-1 h-full w-full ">
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,#021318_0%,#0b0b0b_60%,transparent_100%)] " /> */}
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_100%,#021318_0%,#0b0b0b_100%,transparent_100%)] " /> */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,#021318_0%,#0b0b0b_70%,transparent_100%)] " />
-        {/* <div */}
-        {/*   className="z-[2] absolute inset-0 pointer-events-none isolate opacity-30 contain-strict hidden lg:block"> */}
-        {/*   <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" /> */}
-        {/*   <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" /> */}
-        {/*   <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" /> */}
-        {/* </div> */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,var(--color-primary)_0%,#0b0b0b_70%,transparent_100%)] " />
+        <div
+          className="z-[2] absolute inset-0 pointer-events-none isolate opacity-30 contain-strict hidden lg:block">
+          <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
+          <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
+          <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
+        </div>
       </div>
       <Sparkles
         density={1200}
@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="text-6xl font-bold">
             Transform your ideas into
           </div>
-          <div className="text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#062C3D]">
+          <div className="text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#062C3D] pb-2">
             Beautiful digital experiences
           </div>
           <div className="mt-6">
