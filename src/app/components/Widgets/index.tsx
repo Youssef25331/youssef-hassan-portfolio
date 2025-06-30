@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import ClipboardButton from './ClipboardButton'
 import ActivityCalendar from 'react-activity-calendar'
+import LocationWidget from './LocationWidget'
 
 const Widgets = () => {
   const data = [
@@ -34,7 +35,7 @@ const Widgets = () => {
         {/* <div className='flex flex-row gap-4 inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] border-base-200'> */}
         {/* </div> */}
         <div className='group relative flex size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
-
+          <LocationWidget />
         </div>
 
         <div className='group relative flex size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
