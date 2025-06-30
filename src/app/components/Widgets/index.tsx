@@ -41,8 +41,8 @@ const Widgets = () => {
 
         </div>
 
-        <div className=' group relative flex size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
-          <div className='absolute flex flex-col gap-4 justify-center items-center  transition duration-200 cursor-grab   w-98 overflow-hidden h-73'>
+        <div className='group   size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
+          <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab  w-98 overflow-hidden h-73'>
             <h1 className='font-bold text-3xl text-center text-shadow-main'>
               Let's dive into your next project together
             </h1>
