@@ -4,7 +4,7 @@ import { Sparkles } from "./sparkles"
 
 export default function Hero() {
   return (
-    <div className="h-screen w-full  flex content-center overflow-visible">
+    <div className="h-250 w-full  flex content-center overflow-visible">
       <div className="absolute -z-1 h-full w-full ">
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,#021318_0%,#0b0b0b_60%,transparent_100%)] " /> */}
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_100%,#021318_0%,#0b0b0b_100%,transparent_100%)] " /> */}
@@ -28,12 +28,11 @@ export default function Hero() {
             welcome to my website
           </p>
         </div>
-        <div className="text-center text-foreground ">
-          <span className="text-6xl font-bold">
+        <div className="text-center text-foreground">
+          <div className="text-6xl font-bold">
             Transform your ideas into
-          </span>
-          <br />
-          <div className="text-6xl font-bold mt-3">
+          </div>
+          <div className="text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#062C3D]">
             Beautiful digital experiences
           </div>
           <div className="mt-6">
