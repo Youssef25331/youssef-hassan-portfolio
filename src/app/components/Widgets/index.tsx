@@ -37,11 +37,9 @@ const Widgets = () => {
         <div className='group relative flex size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
           <LocationWidget />
         </div>
-
-        <div className='group relative flex size-full flex-col items-center justify-center  overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
+        <div className='group relative  border rounded-3xl border-base-200 col-span-6  lg:col-span-2 overflow-hidden'>
           <ToolsWidget />
         </div>
-
         <div className='group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
           <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab  w-98 overflow-hidden h-73'>
             <h1 className='font-bold text-3xl text-center text-shadow-main'>
