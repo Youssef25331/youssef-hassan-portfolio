@@ -1,8 +1,8 @@
 import React from 'react'
-import Image from 'next/image'
 import ClipboardButton from './ClipboardButton'
 import ActivityCalendar from 'react-activity-calendar'
 import LocationWidget from './LocationWidget'
+import ToolsWidget from './ToolsWidget'
 
 const Widgets = () => {
   const data = [
@@ -38,16 +38,8 @@ const Widgets = () => {
           <LocationWidget />
         </div>
 
-        <div className='group relative flex size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
-          <div className="flex -z-1 justify-center items-center h-full">
-            <div className="flex justify-center items-center border-2 border-base-300 bg-transparent rounded-3xl size-30">
-              <div className="size-26 rounded-2xl flex justify-center items-center bg-base-300">
-                <div className="relative size-15">
-                  <Image layout="fill" objectFit="contain" src={"/tech/react.png"} alt={"who knows"} />
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className='group relative flex size-full flex-col items-center justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
+          <ToolsWidget />
         </div>
 
         <div className='group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
