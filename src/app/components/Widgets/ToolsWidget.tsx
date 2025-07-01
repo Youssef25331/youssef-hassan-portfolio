@@ -23,8 +23,8 @@ const ToolsWidget = ({ group, delay }: { group: ToolItem[], delay: number }) => 
         }}
       >
         {[...group].map((item, index) => (
-          <motion.div className={`flex justify-center items-center border-2  ${hovered ? "border-cyan-500" : "border-base-300"} duration-500 rounded-3xl size-28 mr-4 `}
-            key={index} animate={{ y: hovered ? -20 : 0 }} transition={{ ease: 'backInOut', type: 'keyframes', duration: 0.5 }}>
+          <motion.div className={`flex justify-center items-center border-2  ${hovered ? "border-purple-500" : "border-base-300"} duration-500 rounded-3xl size-28 mr-4 `}
+            key={index} animate={{ y: hovered ? -10 : 0 }} transition={{ ease: 'backInOut', type: 'keyframes', duration: 0.5 }}>
             <div className="size-23 rounded-2xl flex justify-center items-center bg-base-300">
               <div className="relative size-12">
                 <Image layout="fill" objectFit="contain" src={item.icon} alt={item.name} />
@@ -42,8 +42,8 @@ const ToolsWidget = ({ group, delay }: { group: ToolItem[], delay: number }) => 
         }}
       >
         {[...group].map((item, index) => (
-          <motion.div className={`flex justify-center items-center border-2 ${hovered ? " border-cyan-500" : "border-base-300"} duration-500  rounded-3xl size-28 mr-4`}
-            key={index} animate={{ y: hovered ? -20 : 0 }} transition={{ ease: 'backInOut', type: 'keyframes', duration: 0.5 }}>
+          <motion.div className={`flex justify-center items-center border-2 ${hovered ? " border-purple-500" : "border-base-300"} duration-500  rounded-3xl size-28 mr-4`}
+            key={index} animate={{ y: hovered ? -10 : 0 }} transition={{ ease: 'backInOut', type: 'keyframes', duration: 0.5 }}>
             <div className="size-23 rounded-2xl flex justify-center items-center bg-base-300">
               <div className="relative size-12">
                 <Image layout="fill" objectFit="contain" src={item.icon} alt={item.name} />

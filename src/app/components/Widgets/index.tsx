@@ -27,7 +27,9 @@ const Widgets = () => {
     { name: 'Obsidian', icon: '/tools/obsidian.png' },
     { name: 'Vercel', icon: '/tools/Vercel.png' },
     { name: 'Neovim', icon: '/tools/neovim.png' },
-    { name: 'Docker', icon: '/tools/docker.png' }
+    { name: 'Docker', icon: '/tools/docker.png' },
+    { name: 'Notion', icon: '/tools/notion.png' },
+    { name: 'Spotify', icon: '/tools/spotify.png' }
   ]
   return (
     <main className='w-full max-w-7xl px-4 mx-auto'>
