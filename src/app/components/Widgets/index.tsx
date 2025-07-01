@@ -23,7 +23,12 @@ const Widgets = () => {
       level: 1,
     },
   ]
-
+  const toolGroup = [
+    { name: 'Obsidian', icon: '/tools/obsidian.png' },
+    { name: 'Vercel', icon: '/tools/Vercel.png' },
+    { name: 'Neovim', icon: '/tools/neovim.png' },
+    { name: 'Docker', icon: '/tools/docker.png' }
+  ]
   return (
     <main className='w-full max-w-7xl px-4 mx-auto'>
       <div className='grid w-full grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] mb-20 md:my-20 '>
@@ -38,7 +43,7 @@ const Widgets = () => {
           <LocationWidget />
         </div>
         <div className='group relative border rounded-3xl border-base-200 col-span-6 lg:col-span-2 overflow-hidden items-center flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200'>
-          <ToolsWidget delay={70} />
+          <ToolsWidget delay={70} group={toolGroup} />
         </div>
         <div className='group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
           <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab  w-98 overflow-hidden h-73'>
