@@ -34,15 +34,23 @@ const Widgets = () => {
         </div>
         {/* <div className='flex flex-row gap-4 inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] border-base-200'> */}
         {/* </div> */}
-        <div className='group relative flex size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
+        <div className='group relative flex size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
           <LocationWidget />
         </div>
 
-        <div className='group relative flex size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
-
+        <div className='group relative flex size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
+          <div className="flex -z-1 justify-center items-center h-full">
+            <div className="flex justify-center items-center border-2 border-base-300 bg-transparent rounded-3xl size-30">
+              <div className="size-26 rounded-2xl flex justify-center items-center bg-base-300">
+                <div className="relative size-15">
+                  <Image layout="fill" objectFit="contain" src={"/tech/react.png"} alt={"who knows"} />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className='group   size-full flex-col justify-between overflow-hidden rounded-xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)] col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
+        <div className='group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
           <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab  w-98 overflow-hidden h-73'>
             <h1 className='font-bold text-3xl text-center text-shadow-main'>
               Let's dive into your next project together
