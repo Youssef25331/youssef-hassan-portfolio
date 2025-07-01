@@ -3,6 +3,7 @@ import ClipboardButton from './ClipboardButton'
 import ActivityCalendar from 'react-activity-calendar'
 import LocationWidget from './LocationWidget'
 import ToolsWidget from './ToolsWidget'
+import WidgetOverlay from './WidgetOverlay'
 
 const Widgets = () => {
   const data = [
@@ -29,7 +30,9 @@ const Widgets = () => {
     { name: 'Neovim', icon: '/tools/neovim.png' },
     { name: 'Docker', icon: '/tools/docker.png' },
     { name: 'Notion', icon: '/tools/notion.png' },
-    { name: 'Spotify', icon: '/tools/spotify.png' }
+    { name: 'Spotify', icon: '/tools/spotify.png' },
+    { name: 'Figma', icon: '/tools/figma.png' },
+    { name: 'KeePassXC', icon: '/tools/keepassxc.png' }
   ]
   return (
     <main className='w-full max-w-7xl px-4 mx-auto'>
@@ -41,8 +44,11 @@ const Widgets = () => {
         </div>
         {/* <div className='flex flex-row gap-4 inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] border-base-200'> */}
         {/* </div> */}
-        <div className='group relative flex size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
-          <LocationWidget />
+        <div className='group relative flex size-full flex-col justify-between overflow-hidden  transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
+          <WidgetOverlay >
+            <LocationWidget />
+          </WidgetOverlay>
+
         </div>
         <div className='group relative border rounded-3xl border-base-200 col-span-6 lg:col-span-2 overflow-hidden items-center flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200'>
           <ToolsWidget delay={70} group={toolGroup} />
