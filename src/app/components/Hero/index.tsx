@@ -5,10 +5,10 @@ import { Sparkles } from "./sparkles"
 export default function Hero() {
   return (
     <div className="h-250 w-full  flex content-center overflow-visible">
-      <div className="absolute -z-1 h-full w-full ">
+      <div className="absolute -z-1 h-full w-full  mix-blend-color">
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_0%,#021318_0%,#0b0b0b_60%,transparent_100%)] " /> */}
         {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_100%,#021318_0%,#0b0b0b_100%,transparent_100%)] " /> */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,var(--color-primary)_0%,#0b0b0b_70%,transparent_100%)] " />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,var(--color-primary)_0%,#0b0b0b_70%,transparent_100%)]" />
         <div
           className="z-[2] absolute inset-0 pointer-events-none isolate opacity-30 contain-strict hidden lg:block">
           <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
