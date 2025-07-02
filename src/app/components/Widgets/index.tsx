@@ -4,7 +4,7 @@ import ActivityCalendar from 'react-activity-calendar'
 import LocationWidget from './LocationWidget'
 import ToolsWidget from './ToolsWidget'
 import WidgetOverlay from './WidgetOverlay'
-import { LucideMapPin } from 'lucide-react'
+import { LucideGitGraph, LucideMapPin, LucideNotebookPen } from 'lucide-react'
 
 const Widgets = () => {
   const data = [
@@ -38,9 +38,11 @@ const Widgets = () => {
   return (
     <main className='w-full max-w-7xl px-4 mx-auto'>
       <div className='grid w-full grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] mb-20 md:my-20 '>
-        <div className="inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-4">
-          <div className='w-full h-full flex justify-center  items-center'>
-            <ActivityCalendar colorScheme='dark' data={data} />
+        <div className="overflow-hidden transition duration-200 border rounded-3xl border-base-200 col-span-4">
+          <div className='group relative w-full h-full flex justify-center items-center'>
+            <WidgetOverlay title='' text='' buttonText='Connect Now'  >
+              <ActivityCalendar colorScheme='dark' data={data} />
+            </WidgetOverlay>
           </div>
         </div>
         {/* <div className='flex flex-row gap-4 inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] border-base-200'> */}
@@ -49,10 +51,12 @@ const Widgets = () => {
           <WidgetOverlay title='Remote' text='Egypt' buttonText='Connect Now' icon={LucideMapPin}   >
             <LocationWidget />
           </WidgetOverlay>
-
         </div>
         <div className='group relative border rounded-3xl border-base-200 col-span-6 lg:col-span-2 overflow-hidden items-center flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200'>
-          <ToolsWidget delay={70} group={toolGroup} />
+
+          <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' icon={LucideNotebookPen}   >
+            <ToolsWidget delay={70} group={toolGroup} />
+          </WidgetOverlay>
         </div>
         <div className='group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
           <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab  w-98 overflow-hidden h-73'>

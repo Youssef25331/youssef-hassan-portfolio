@@ -2,20 +2,22 @@
 import { LucideArrowRight } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 
-const WidgetOverlay: React.FC<{ children: React.ReactNode, title: string, text: string, buttonText: string, icon: React.ComponentType<{ className?: string }> }> = ({ children, title, text, buttonText, icon: IconComponent },) => {
+const WidgetOverlay: React.FC<{ children: React.ReactNode, title: string, text: string, buttonText: string, icon?: React.ComponentType<{ className?: string }> }> = ({ children, title, text, buttonText, icon: IconComponent },) => {
   const [hovered, setHovered] = useState(false)
-  const iconClasses: string = "size-12 origin-left text-neutral-700 transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75"
+  const iconClasses: string = "size-12 origin-left text-neutral-600 transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75"
 
   useEffect(() => { console.log(hovered) }, [hovered])
   return (
     <div
-      className="relative size-full"
+      className="size-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
-      {children}
+      <div className='relative w-full h-full flex justify-center items-center'>
+        {children}
+      </div>
 
       <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transform-gpu transition-all duration-300 group-hover:-translate-y-10 absolute bottom-0">
-        <IconComponent className={iconClasses} />
+        {IconComponent ? <IconComponent className={iconClasses} /> : ""}
         <h1 className='max-w-lg text-neutral-400'>{title}</h1>
         <p className='text-xl font-semibold text-neutral-300'>{text}</p>
       </div>
