@@ -3,8 +3,26 @@
 import createGlobe, { COBEOptions } from "cobe"
 import { useCallback, useEffect, useRef, useState } from "react"
 
+const rootStyles = getComputedStyle(document.documentElement);
 const glowIntesnity: number = 100
 const baseIntensity: number = 90
+
+function hexToRgb(hex: string) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : {
+    r: 2,
+    g: 19,
+    b: 18,
+  };
+}
+const primaryColor = hexToRgb(rootStyles.getPropertyValue('--color-primary').trim());
+
+const leColor: [number, number, number] = [primaryColor.r, primaryColor.b, primaryColor.g]
+console.log(leColor)
 
 const GLOBE_CONFIG: COBEOptions = {
   width: 800,
@@ -21,7 +39,7 @@ const GLOBE_CONFIG: COBEOptions = {
   mapBrightness: 1.2,
   baseColor: [6 / baseIntensity, 54 / baseIntensity, 71 / baseIntensity,],
   markerColor: [21 / 255, 100 / 255, 21 / 255],
-  glowColor: [2 / glowIntesnity, 19 / glowIntesnity, 18 / glowIntesnity],
+  glowColor: leColor,
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
