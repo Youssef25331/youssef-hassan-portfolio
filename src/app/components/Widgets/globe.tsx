@@ -2,6 +2,7 @@
 
 import createGlobe, { COBEOptions } from "cobe";
 import { useCallback, useEffect, useRef, useState } from "react";
+import Color from "color";
 
 function hexToRgb(hex: string) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -67,6 +68,9 @@ export function Globe({
     const rootStyles = getComputedStyle(document.documentElement);
     const fetchedColor = rootStyles.getPropertyValue('--color-primary').trim();
     const primaryColor = hexToRgb(fetchedColor);
+    console.log(fetchedColor)
+    const mixColor1 = Color(primaryColor).mix(Color("#ffffff"), 0.34)
+    const baseColor = mixColor1.rgb().array()
 
     const intensity = 255;
     const glowColor = [
@@ -79,7 +83,7 @@ export function Globe({
     setGlobeConfig((prevConfig) => ({
       ...prevConfig,
       glowColor: [glowColor[0], glowColor[1], glowColor[2]],
-      baseColor: [143/intensity, 99/intensity, 151/intensity],
+      baseColor: [baseColor[0] / intensity, baseColor[1] / intensity, baseColor[2] / intensity],
       markerColor: [glowColor[0], glowColor[1], glowColor[2]]
     }));
   }, []);
