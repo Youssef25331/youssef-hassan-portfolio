@@ -78,7 +78,9 @@ export function Globe({
     // Update the config with the computed glowColor
     setGlobeConfig((prevConfig) => ({
       ...prevConfig,
-      glowColor: [glowColor[0], glowColor[1], glowColor[2]]
+      glowColor: [glowColor[0], glowColor[1], glowColor[2]],
+      baseColor: [143/intensity, 99/intensity, 151/intensity],
+      markerColor: [glowColor[0], glowColor[1], glowColor[2]]
     }));
   }, []);
 
