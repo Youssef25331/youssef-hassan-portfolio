@@ -1,22 +1,56 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { useScroll } from 'framer-motion'
 import ShowcasePanel from './ShowcasePanel'
+import { Console } from 'console'
 
+interface StackItem {
+  name: string
+  icon: string,
+}
+interface SliderItem {
+  projectName: string,
+  projectDescription: string,
+  quotes: string[],
+  stack: StackItem[]
+}
 
 const Showcase = () => {
   const sliderRef = useRef<HTMLDivElement>(null)
   const sliderChild = useRef<HTMLDivElement>(null)
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  const sliders: SliderItem[] = [
+    {
+      projectName: 'project one',
+      projectDescription: 'notsure', quotes: ["so awesome", 'so sad'],
+      stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind' }],
+    },
+    {
+      projectName: 'project two',
+      projectDescription: 'notsure', quotes: ["so awesome", 'so sad'],
+      stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind' }],
+    }
+  ]
+  useEffect(() => {
+    console.log(activeSlide)
+  }, [activeSlide])
 
   return (
     <main>
       <div className="flex flex-col justify-center gap-8">
-        <h1 className='text-6xl text-shadow-main text-center'>Projects i worked on</h1>
+        <h1 className='text-6xl text-shadow-main text-center'>Projects I worked on</h1>
         <div className="flex flex-row justify-center gap-6">
           <div className="flex flex-col gap-8">
-            <ShowcasePanel sliderRef={sliderRef} sliderChild={sliderChild} />
-            <ShowcasePanel sliderRef={sliderRef} sliderChild={sliderChild} />
+            {
+              sliders.map((item, i) => {
+                return (
+                  <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
+                    setActiveSlider={setActiveSlide} />
+                )
+              })
+            }
           </div>
           <div className="sticky" ref={sliderRef}>
             <div className="sticky top-40" ref={sliderChild}>
@@ -25,7 +59,7 @@ const Showcase = () => {
                 <div className="flex flex-col w-100 gap-8">
                   <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-2">
-                      <h1 className='text-3xl'>Project name</h1>
+                      <h1 className='text-3xl'>{sliders[activeSlide].projectName}</h1>
                       <div className="flex flex-col">
                         <p className='text-sm text-base-content/70'>Lorem ipsum dolor sit amet,
                           officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia.</p>
