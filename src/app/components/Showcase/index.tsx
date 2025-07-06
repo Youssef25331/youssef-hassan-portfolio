@@ -14,6 +14,16 @@ interface SliderItem {
   stack: StackItem[],
   color: string
 }
+type StackName = 'React' | 'TypeScript' | 'NodeJS' | 'Python' | 'Tailwind' | 'NextJS';
+
+const stacks: Record<StackName, StackItem> = {
+  React: { name: "React", icon: "/tech/react.png" },
+  TypeScript: { name: "TypeScript", icon: "/tech/typescript.png" },
+  NodeJS: { name: "Node.JS", icon: "/tech/node.png" },
+  Tailwind: { name: "Tailwind CSS", icon: "/tech/tailwind.png" },
+  Python: { name: "Python", icon: "python-icon.svg" },
+  NextJS: { name: "Next.JS", icon: "/tech/next.png" },
+} as const
 
 const Showcase = () => {
   const sliderRef = useRef<HTMLDivElement>(null)
@@ -23,17 +33,18 @@ const Showcase = () => {
   const sliders: SliderItem[] = [
     {
       projectName: 'project one',
-      projectDescription: 'notsure', quotes: ["so awesome", 'so sad'],
-      stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind' }],
+      projectDescription: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.', quotes: ["Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.", 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'],
+      stack: [stacks.Tailwind, stacks.TypeScript, stacks.NextJS],
       color: "#0e282a"
     },
     {
       projectName: 'project two',
       projectDescription: 'Who cares', quotes: ["so awesome", 'so sad AND depressing'],
-      stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind CSS' }],
+      stack: [stacks.NodeJS,],
       color: "#571163"
     }
   ]
+
 
   return (
     <main>
@@ -65,9 +76,9 @@ const Showcase = () => {
                       </div>
                     </div>
                     <div className='flex flex-col gap-2'>
-                      {sliders[activeSlide].quotes.map((quote) => {
+                      {sliders[activeSlide].quotes.map((quote, i) => {
                         return (
-                          <div key={quote} className="flex items-center">
+                          <div key={i} className="flex items-center">
                             <div className="my-4 mr-4 h-1 min-w-2 rounded-full"
                               style={{ backgroundColor: sliders[activeSlide].color }}
                             ></div>
