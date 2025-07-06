@@ -1,9 +1,10 @@
 import { useScroll } from 'framer-motion'
 import React, { useEffect, useRef } from 'react'
 
-const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, setActiveSlider }: {
+const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, setActiveSlider }: {
   sliderRef: React.RefObject<HTMLDivElement | null>,
   sliderChild: React.RefObject<HTMLDivElement | null>,
+  color: string,
   setActiveSlider: React.Dispatch<React.SetStateAction<number>>,
   slideNumber: number
 }) => {
@@ -41,9 +42,12 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, setActiveSlider }:
             background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
           }}
         ></div>
-        <div className="relative flex overflow-hidden justify-center items-end bg-cyan-900 w-full h-full rounded-2xl" style={{ background: "linear-gradient(175deg,#0e282a 83%, #267076 100%)" }}>
+        <div className="relative flex overflow-hidden justify-center items-end bg-cyan-900 w-full h-full rounded-2xl"
+          style={{ background: `linear-gradient(180deg,${color} 63%, color-mix(in hsl, hsl(from ${color} h s 20%) 100%, ${color} 0%) 80%,color-mix(in hsl, hsl(from ${color} h s 30%) 100%, ${color} 0%) 100%)` }}>
           <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
-          <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] shadow-[0_0px_45px_#287176] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'>
+          <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'
+            style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}
+          >
             <img className='rounded-t-sm w-full h-full object-fill' src={"https://framerusercontent.com/images/eBewXVthrkfU83ygkD85hGPo.png"} />
           </div>
         </div>

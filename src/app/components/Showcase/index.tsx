@@ -12,7 +12,7 @@ interface SliderItem {
   projectDescription: string,
   quotes: string[],
   stack: StackItem[],
-  color?: string
+  color: string
 }
 
 const Showcase = () => {
@@ -25,17 +25,15 @@ const Showcase = () => {
       projectName: 'project one',
       projectDescription: 'notsure', quotes: ["so awesome", 'so sad'],
       stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind' }],
+      color: "#0e282a"
     },
     {
       projectName: 'project two',
       projectDescription: 'Who cares', quotes: ["so awesome", 'so sad AND depressing'],
       stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind CSS' }],
+      color: "#571163"
     }
   ]
-  useEffect(() => {
-    console.log(sliders[activeSlide].color)
-  }, [activeSlide])
-  let aborder = ("border-[#ff0f00]").toLowerCase()
 
   return (
     <main>
@@ -47,7 +45,7 @@ const Showcase = () => {
               sliders.map((item, i) => {
                 return (
                   <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
-                    setActiveSlider={setActiveSlide} />
+                    setActiveSlider={setActiveSlide} color={sliders[i].color} />
                 )
               })
             }
@@ -55,7 +53,9 @@ const Showcase = () => {
           <div className="sticky" ref={sliderRef}>
             <div className="sticky top-40" ref={sliderChild}>
               <div className="flex">
-                <div className="my-4 mr-4 h-1 min-w-6 rounded-full bg-blue-700"></div>
+                <div className="my-4 mr-4 h-1 min-w-6 rounded-full"
+                  style={{ backgroundColor: sliders[activeSlide].color }}
+                ></div>
                 <div className="flex flex-col w-100 gap-8">
                   <div className="flex flex-col gap-4">
                     <div className="flex flex-col gap-2">
@@ -68,7 +68,9 @@ const Showcase = () => {
                       {sliders[activeSlide].quotes.map((quote) => {
                         return (
                           <div key={quote} className="flex items-center">
-                            <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
+                            <div className="my-4 mr-4 h-1 min-w-2 rounded-full"
+                              style={{ backgroundColor: sliders[activeSlide].color }}
+                            ></div>
                             <p>{quote}</p>
                           </div>
                         )
@@ -78,7 +80,7 @@ const Showcase = () => {
                   <div className="flex flex-wrap w-120 gap-2">
                     {sliders[activeSlide].stack.map((e) => {
                       return (
-                        <div key={e.name} className={`flex justify-center border ${aborder} rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]`}>
+                        <div key={e.name} className={`flex justify-center border border-[#716C6C] rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]`}>
                           <div className="relative w-5">
                             <Image layout="fill" objectFit="contain" src={e.icon} alt='tailwind' />
                           </div>
