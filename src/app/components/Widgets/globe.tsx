@@ -1,30 +1,21 @@
-"use client"
+"use client";
 
-import createGlobe, { COBEOptions } from "cobe"
-import { useCallback, useEffect, useRef, useState } from "react"
-
-const rootStyles = getComputedStyle(document.documentElement);
-const glowIntesnity: number = 100
-const baseIntensity: number = 90
+import createGlobe, { COBEOptions } from "cobe";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 function hexToRgb(hex: string) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : {
-    r: 2,
-    g: 19,
-    b: 18,
-  };
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result
+    ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
+    : { r: 2, g: 19, b: 18 }; // Default color if parsing fails
 }
-const primaryColor = hexToRgb(rootStyles.getPropertyValue('--color-primary').trim());
 
-const leColor: [number, number, number] = [primaryColor.r, primaryColor.b, primaryColor.g]
-console.log(leColor)
-
-const GLOBE_CONFIG: COBEOptions = {
+// Default config without glowColor (we'll set it dynamically)
+const DEFAULT_GLOBE_CONFIG: COBEOptions = {
   width: 800,
   height: 800,
   opacity: 0.9,
@@ -37,9 +28,9 @@ const GLOBE_CONFIG: COBEOptions = {
   diffuse: 0.4,
   mapSamples: 16000,
   mapBrightness: 1.2,
-  baseColor: [6 / baseIntensity, 54 / baseIntensity, 71 / baseIntensity,],
+  baseColor: [6 / 90, 54 / 90, 71 / 90],
   markerColor: [21 / 255, 100 / 255, 21 / 255],
-  glowColor: leColor,
+  glowColor: [1, 1, 1],
   markers: [
     { location: [14.5995, 120.9842], size: 0.03 },
     { location: [19.076, 72.8777], size: 0.1 },
@@ -52,83 +43,101 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [34.6937, 135.5022], size: 0.05 },
     { location: [41.0082, 28.9784], size: 0.06 },
   ],
-}
+};
 
 export function Globe({
   className,
-  config = GLOBE_CONFIG,
+  config: propConfig = DEFAULT_GLOBE_CONFIG,
 }: {
-  className?: string
-  config?: COBEOptions
+  className?: string;
+  config?: COBEOptions;
 }) {
-  let phi = 0
-  let width = 0
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const pointerInteracting = useRef(null)
-  const pointerInteractionMovement = useRef(0)
-  const [r, setR] = useState(0)
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pointerInteracting = useRef<number | null>(null);
+  const pointerInteractionMovement = useRef(0);
+  const [r, setR] = useState(0);
+  let phi = 0;
+  let width = 0;
 
-  const updatePointerInteraction = (value: any) => {
-    pointerInteracting.current = value
+  // State to hold the dynamic glowColor
+  const [globeConfig, setGlobeConfig] = useState<COBEOptions>(propConfig);
+
+  // Fetch the color when the component mounts
+  useEffect(() => {
+    const rootStyles = getComputedStyle(document.documentElement);
+    const fetchedColor = rootStyles.getPropertyValue('--color-primary').trim();
+    const primaryColor = hexToRgb(fetchedColor);
+
+    const intensity = 255;
+    const glowColor = [
+      (primaryColor.r / intensity),
+      (primaryColor.g / intensity),
+      (primaryColor.b / intensity),
+    ];
+
+    // Update the config with the computed glowColor
+    setGlobeConfig((prevConfig) => ({
+      ...prevConfig,
+      glowColor: [glowColor[0], glowColor[1], glowColor[2]]
+    }));
+  }, []);
+
+  const updatePointerInteraction = (value: number | null) => {
+    pointerInteracting.current = value;
     if (canvasRef.current) {
-      canvasRef.current.style.cursor = value ? "grabbing" : "grab"
+      canvasRef.current.style.cursor = value ? "grabbing" : "grab";
     }
-  }
+  };
 
-  const updateMovement = (clientX: any) => {
+  const updateMovement = (clientX: number) => {
     if (pointerInteracting.current !== null) {
-      const delta = clientX - pointerInteracting.current
-      pointerInteractionMovement.current = delta
-      setR(delta / 200)
+      const delta = clientX - pointerInteracting.current;
+      pointerInteractionMovement.current = delta;
+      setR(delta / 200);
     }
-  }
+  };
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
-      if (!pointerInteracting.current) phi += 0.005
-      state.phi = phi + r
-      state.width = width * 2
-      state.height = width * 2
+      if (!pointerInteracting.current) phi += 0.005;
+      state.phi = phi + r;
+      state.width = width * 2;
+      state.height = width * 2;
     },
     [r],
-  )
+  );
 
   const onResize = () => {
     if (canvasRef.current) {
-      width = canvasRef.current.offsetWidth
+      width = canvasRef.current.offsetWidth;
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener("resize", onResize)
-    onResize()
+    window.addEventListener("resize", onResize);
+    onResize();
 
     const globe = createGlobe(canvasRef.current!, {
-      ...config,
+      ...globeConfig,
       width: width * 2,
       height: width * 2,
       onRender,
-    })
+    });
 
-    setTimeout(() => (canvasRef.current!.style.opacity = "1"))
-    return () => globe.destroy()
-  }, [])
+    setTimeout(() => {
+      if (canvasRef.current) canvasRef.current.style.opacity = "1";
+    });
+
+    return () => globe.destroy();
+  }, [globeConfig, onRender]); // Re-run when globeConfig changes
 
   return (
-    <div
-      className={
-        `mx-auto aspect-[1/1] w-full max-w-[600px] ` + className
-      }
-    >
+    <div className={`mx-auto aspect-[1/1] w-full max-w-[600px] ${className}`}>
       <canvas
-        className={
-          "relative -translate-x-[23%] translate-y-[6%] size-180 opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
-        }
+        className="relative -translate-x-[23%] translate-y-[6%] size-180 opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
         ref={canvasRef}
         onPointerDown={(e) =>
-          updatePointerInteraction(
-            e.clientX - pointerInteractionMovement.current,
-          )
+          updatePointerInteraction(e.clientX - pointerInteractionMovement.current)
         }
         onPointerUp={() => updatePointerInteraction(null)}
         onPointerOut={() => updatePointerInteraction(null)}
@@ -138,5 +147,5 @@ export function Globe({
         }
       />
     </div>
-  )
+  );
 }
