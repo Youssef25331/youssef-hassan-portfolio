@@ -1,9 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { useScroll } from 'framer-motion'
 import ShowcasePanel from './ShowcasePanel'
-import { Console } from 'console'
 
 interface StackItem {
   name: string
@@ -13,7 +11,8 @@ interface SliderItem {
   projectName: string,
   projectDescription: string,
   quotes: string[],
-  stack: StackItem[]
+  stack: StackItem[],
+  color?: string
 }
 
 const Showcase = () => {
@@ -29,13 +28,14 @@ const Showcase = () => {
     },
     {
       projectName: 'project two',
-      projectDescription: 'notsure', quotes: ["so awesome", 'so sad'],
-      stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind' }],
+      projectDescription: 'Who cares', quotes: ["so awesome", 'so sad AND depressing'],
+      stack: [{ icon: '/tech/tailwind.png', name: 'Tailwind CSS' }],
     }
   ]
   useEffect(() => {
-    console.log(activeSlide)
+    console.log(sliders[activeSlide].color)
   }, [activeSlide])
+  let aborder = ("border-[#ff0f00]").toLowerCase()
 
   return (
     <main>
@@ -61,67 +61,33 @@ const Showcase = () => {
                     <div className="flex flex-col gap-2">
                       <h1 className='text-3xl'>{sliders[activeSlide].projectName}</h1>
                       <div className="flex flex-col">
-                        <p className='text-sm text-base-content/70'>Lorem ipsum dolor sit amet,
-                          officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia.</p>
+                        <p className='text-sm text-base-content/70'>{sliders[activeSlide].projectDescription}</p>
                       </div>
                     </div>
                     <div className='flex flex-col gap-2'>
-                      <div className="flex items-center">
-                        <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
-                        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
-                        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-                      </div>
-                      <div className="flex items-center">
-                        <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
-                        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-                      </div>
+                      {sliders[activeSlide].quotes.map((quote) => {
+                        return (
+                          <div key={quote} className="flex items-center">
+                            <div className="my-4 mr-4 h-1 min-w-2 rounded-full bg-blue-700"></div>
+                            <p>{quote}</p>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
-
                   <div className="flex flex-wrap w-120 gap-2">
-                    <div className="flex justify-center border border-[#716C6C] rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
-                      <div className="relative w-5">
-                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
-                      </div>
-                      <p>
-                        Tailwind CSS
-                      </p>
-                    </div>
-                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
-                      <div className="relative w-5">
-                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
-                      </div>
-                      <p>
-                        Tailwind CSS
-                      </p>
-                    </div>
-                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
-                      <div className="relative w-5">
-                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
-                      </div>
-                      <p>
-                        Tailwind CSS
-                      </p>
-                    </div>
-                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
-                      <div className="relative w-5">
-                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
-                      </div>
-                      <p>
-                        Tailwind CSS
-                      </p>
-                    </div>
-                    <div className="flex justify-center border border-[#716C6C] rounded-3xl  px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]">
-                      <div className="relative w-5">
-                        <Image layout="fill" objectFit="contain" src={"/tech/tailwind.png"} alt='tailwind' />
-                      </div>
-                      <p>
-                        Tailwind CSS
-                      </p>
-                    </div>
+                    {sliders[activeSlide].stack.map((e) => {
+                      return (
+                        <div key={e.name} className={`flex justify-center border ${aborder} rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]`}>
+                          <div className="relative w-5">
+                            <Image layout="fill" objectFit="contain" src={e.icon} alt='tailwind' />
+                          </div>
+                          <p>
+                            {e.name}
+                          </p>
+                        </div>
+                      )
+                    })}
                   </div>
                 </div>
               </div>
