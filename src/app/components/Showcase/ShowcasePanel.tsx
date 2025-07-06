@@ -22,9 +22,9 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, setActiveSlider }:
         const viewportBottom = scrollY.get() + viewportHeight
         const sliderTop = sliderRef.current.offsetTop
         const sliderChildTop = sliderChild.current.offsetTop
-        const middleDistance = (sliderTop + sliderChildTop) - (elementTop + (elementHeight / 2))
-        if (middleDistance > 0 && middleDistance < elementHeight / 2) {
-          setActiveSlider(slideNumber + 1)
+        const topDifference = (elementTop) - (sliderTop + sliderChildTop)
+        if (topDifference < (elementHeight / 2) + 32 && topDifference > -(elementHeight / 2)) {
+          setActiveSlider(slideNumber)
         }
       }
     }
