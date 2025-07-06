@@ -68,7 +68,6 @@ export function Globe({
     const rootStyles = getComputedStyle(document.documentElement);
     const fetchedColor = rootStyles.getPropertyValue('--color-primary').trim();
     const primaryColor = hexToRgb(fetchedColor);
-    console.log(fetchedColor)
     const mixColor1 = Color(primaryColor).mix(Color("#ffffff"), 0.34)
     const baseColor = mixColor1.rgb().array()
 
