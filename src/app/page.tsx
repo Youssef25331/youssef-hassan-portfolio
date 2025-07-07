@@ -29,11 +29,18 @@ export default function Home() {
       <main className="flex flex-col gap-10">
         <Hero />
         <Stack />
-        <div className="my-30">
+        <div className="my-15">
           <Widgets />
         </div>
-        <Showcase />
-        <About />
+
+        <div className="my-15">
+          <About />
+        </div>
+
+        <div className="my-15">
+          <Showcase />
+        </div>
+
         <Footer />
       </main>
       {/* </SmoothScroller> */}
