@@ -49,7 +49,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color,image, setAc
           <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'
             style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}
           >
-            <img className='rounded-t-sm w-full h-full object-cover' src={image} />
+            <img className='rounded-t-sm w-full h-full object-cover ' src={image} />
           </div>
         </div>
       </div>
