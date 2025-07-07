@@ -4,10 +4,10 @@ import AnimatedButton from '../AnimatedButton'
 import { style } from 'framer-motion/client'
 import { LucideGithub, LucideLinkedin } from 'lucide-react'
 
-const Footer = () => {
+const Footer = ({ scrollTo }: { scrollTo: Function }) => {
   return (
     <>
-      <div id="footer-top">
+      <div id="footer">
         <div>
           <div className={'relative py-40 bg-cover bg-center w-full  bg-[url("/backgrounds/dark.png")]  flex flex-col justify-center items-center'} >
             <div className={'relative flex flex-col h-full w-full justify-center items-center gap-2 py-10 max-w-6xl z-2 '}>
@@ -31,20 +31,24 @@ const Footer = () => {
             <p className='text-sm text-white/70 '>I'm Youssef - a full-stack developer,<br />freelancer & problem solver.<br />Thanks for checking out my site!</p>
             <p className='text-sm text-white/70 '>© {new Date().getFullYear()} Youssef Hassan | Built with Next.js</p>
             <div className="flex gap-2 text-white/70">
-              <LucideGithub />
-              <LucideLinkedin />
+              <a className='hover:text-white' href='https://github.com/Youssef25331'>
+                <LucideGithub />
+              </a>
+              <a className='hover:text-white' href='https://www.linkedin.com/in/youssef-hassan-b023a526b/'>
+                <LucideLinkedin />
+              </a>
             </div>
           </div>
 
-          <div className='flex flex-col text-center'>
-            <h1 className='text-sm text-white font-bold'>
-              Transition
+          <div className='flex flex-col text-center align-center'>
+            <h1 className='text-sm text-white font-bold '>
+              Navigate
             </h1>
             <ul className='text-white/70'>
-              <li>Home</li>
-              <li>Home</li>
-              <li>Home</li>
-              <li>Home</li>
+              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#hero")}>Home</li>
+              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#stack")}>My Stack</li>
+              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#about")}>About</li>
+              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#projects")}>Projects</li>
             </ul>
           </div>
           <div className="">

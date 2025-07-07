@@ -50,12 +50,7 @@ export default function Home() {
         <div className="my-15" id="projects">
           <Showcase />
         </div>
-        <div id="footer">
-          <Footer />
-        </div>
-        <button onClick={() => scrollTo('#about')} className="px-4 py-2 bg-blue-500 text-white rounded btn">
-          Go to About
-        </button>
+          <Footer scrollTo={scrollTo} />
       </main>
     </>
   );
