@@ -13,13 +13,12 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[]
   className?: string
+  scrollTo: Function
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, scrollTo }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
-
   return (
-
     <div className="flex">
       <div className="fixed top-0 mt-7 ml-30 z-10">
         <img src="/yh.svg" alt="Logo" className='size-7' />
@@ -34,10 +33,12 @@ export function NavBar({ items, className }: NavBarProps) {
           {items.map((item) => {
             const isActive = activeTab === item.name
             return (
-              <Link
+              <div
                 key={item.name}
-                onClick={() => setActiveTab(item.name)}
-                href={item.url}
+                onClick={() => {
+                  setActiveTab(item.name)
+                  scrollTo(item.url)
+                }}
                 className={`relative cursor-pointer text-xs px-5 py-2 rounded-full transition-colors hover:text-base-content ${isActive ? "bg-muted text-base-content" : "text-primary-content"}`}
               >
                 <span className="hidden md:inline">{item.name}</span>
@@ -61,7 +62,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     </div>
                   </motion.div>
                 )}
-              </Link>
+              </div>
             )
           })}
         </div>

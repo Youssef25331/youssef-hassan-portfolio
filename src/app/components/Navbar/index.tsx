@@ -1,13 +1,13 @@
 import { NavBar } from "./light-navbar"
 
-export function NavBarLoader() {
+export function NavBarLoader({ scrollTo }: { scrollTo: Function }) {
   const navItems = [
-    { name: 'Home', url: '#', },
-    { name: 'About', url: '#stack', },
-    { name: 'Projects', url: '#', },
-    { name: 'Resume', url: '#', },
-    { name: 'Resumes', url: '#', }
+    { name: 'Home', url: '#hero', },
+    { name: 'My Stack', url: '#stack', },
+    { name: 'About', url: '#about', },
+    { name: 'Projects', url: '#projects', },
+    { name: 'Footer', url: '#footer', }
   ]
 
-  return <NavBar items={navItems} />
+  return <NavBar items={navItems} scrollTo={scrollTo} />
 }
