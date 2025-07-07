@@ -1,10 +1,11 @@
 import { useScroll } from 'framer-motion'
 import React, { useEffect, useRef } from 'react'
 
-const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, setActiveSlider }: {
+const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color,image, setActiveSlider }: {
   sliderRef: React.RefObject<HTMLDivElement | null>,
   sliderChild: React.RefObject<HTMLDivElement | null>,
   color: string,
+  image:string,
   setActiveSlider: React.Dispatch<React.SetStateAction<number>>,
   slideNumber: number
 }) => {
@@ -48,7 +49,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, setActiveSl
           <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'
             style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}
           >
-            <img className='rounded-t-sm w-full h-full object-fill' src={"https://framerusercontent.com/images/eBewXVthrkfU83ygkD85hGPo.png"} />
+            <img className='rounded-t-sm w-full h-full object-cover' src={image} />
           </div>
         </div>
       </div>

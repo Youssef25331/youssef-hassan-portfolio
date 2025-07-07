@@ -12,9 +12,10 @@ interface SliderItem {
   projectDescription: string,
   quotes: string[],
   stack: StackItem[],
-  color: string
+  color: string,
+  image: string,
 }
-type StackName = 'React' | 'TypeScript' | 'NodeJS' | 'Python' | 'Tailwind' | 'NextJS';
+type StackName = 'React' | 'TypeScript' | 'NodeJS' | 'Python' | 'Tailwind' | 'NextJS' | 'FramerMotion'|'GSAP';
 
 const stacks: Record<StackName, StackItem> = {
   React: { name: "React", icon: "/tech/react.png" },
@@ -23,6 +24,8 @@ const stacks: Record<StackName, StackItem> = {
   Tailwind: { name: "Tailwind CSS", icon: "/tech/tailwind.png" },
   Python: { name: "Python", icon: "python-icon.svg" },
   NextJS: { name: "Next.JS", icon: "/tech/next.png" },
+  FramerMotion: { name: 'Framer Motion', icon: '/tech/framer.png' },
+  GSAP: { name: 'GSAP', icon: '/tech/gsap.png' }
 } as const
 
 const Showcase = () => {
@@ -34,14 +37,31 @@ const Showcase = () => {
     {
       projectName: 'project one',
       projectDescription: 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.', quotes: ["Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.", 'Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.'],
-      stack: [stacks.Tailwind, stacks.TypeScript, stacks.NextJS],
+      stack: [stacks.Tailwind, stacks.TypeScript, stacks.NextJS, stacks.React, stacks.FramerMotion, stacks.GSAP],
+      image: "/projects/portfolio.png",
       color: "#0e282a"
     },
     {
       projectName: 'project two',
       projectDescription: 'Who cares', quotes: ["so awesome", 'so sad AND depressing'],
       stack: [stacks.NodeJS,],
+      image: "/projects/mavoid.png",
+      color: "#0c1e36"
+    },
+
+    {
+      projectName: 'project three',
+      projectDescription: 'Who cares', quotes: ["so awesome", 'so sad AND depressing'],
+      stack: [stacks.NodeJS,],
+      image: "/projects/moviedb.png",
       color: "#571163"
+    },
+    {
+      projectName: '',
+      projectDescription: 'Who cares', quotes: ["so awesome", 'so sad AND depressing'],
+      stack: [stacks.NodeJS,],
+      image: "/projects/mavoidportal.png",
+      color: "#22166c"
     }
   ]
 
@@ -56,7 +76,7 @@ const Showcase = () => {
               sliders.map((item, i) => {
                 return (
                   <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
-                    setActiveSlider={setActiveSlide} color={sliders[i].color} />
+                    setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} />
                 )
               })
             }
