@@ -28,7 +28,7 @@ const Footer = ({ scrollTo }: { scrollTo: Function }) => {
         <div className="px-40 flex justify-between mb-10">
           <div className="flex flex-col gap-2">
             <img src="/yh.svg" alt="Vercel Logo" className='size-9 -ml-2 mb-2' />
-            <p className='text-sm text-white/70 '>I'm Youssef - a full-stack developer,<br />freelancer & problem solver.<br />Thanks for checking out my site!</p>
+            <p className='text-sm text-white/70 '>Hey there! I'm Youssef, a full-stack developer,<br />freelancer, and creative problem-solver.<br />Glad you stopped by my site!</p>
             <p className='text-sm text-white/70 '>© {new Date().getFullYear()} Youssef Hassan | Built with Next.js</p>
             <div className="flex gap-2 text-white/70">
               <a className='hover:text-white' href='https://github.com/Youssef25331'>
