@@ -52,9 +52,9 @@ const Widgets = () => {
         {/* <div className='flex flex-row gap-4 inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] border-base-200'> */}
         {/* </div> */}
         <div className='group relative flex size-full flex-col justify-between overflow-hidden  transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-m:h-[32rem]'>
-          <WidgetOverlay title='Remote' text='Egypt' buttonText='Connect Now' icon={LucideMapPin}   >
+          {/* <WidgetOverlay title='Remote' text='Egypt' buttonText='Connect Now' icon={LucideMapPin}   > */}
             <LocationWidget />
-          </WidgetOverlay>
+          {/* </WidgetOverlay> */}
         </div>
         <div className='group relative border rounded-3xl border-base-200 col-span-6 lg:col-span-2 overflow-hidden  flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200'>
           <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' icon={LucideNotebookPen}   >

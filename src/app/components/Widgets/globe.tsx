@@ -53,7 +53,7 @@ export function Globe({
   let width = 0;
 
   // State to hold the dynamic glowColor
-  const [globeConfig, setGlobeConfig] = useState<COBEOptions>(propConfig);
+  const [globeConfig, setGlobeConfig,] = useState<COBEOptions>(propConfig);
 
   // Fetch the color when the component mounts
   useEffect(() => {
@@ -93,14 +93,18 @@ export function Globe({
       setR(delta / 200);
     }
   };
-
-  const onRender = useCallback(
+  const buttonClicked = false
+  const dick = false
+  let onRender = useCallback(
     (state: Record<string, any>) => {
-      if (pointerInteracting.current) phi += 0.005;
-      state.phi = 2.37;
-      state.theta = 0.5;
-      state.width = width * 2;
-      state.height = width * 2;
+      if (!pointerInteracting.current && !buttonClicked) {
+        phi += 0.005;
+        state.phi = phi + r;
+        state.width = width * 2;
+        state.height = width * 2;
+      } else {
+        state.phi = 1
+      }
     },
     [r],
   );
@@ -130,20 +134,27 @@ export function Globe({
   }, [globeConfig, onRender]); // Re-run when globeConfig changes
 
   return (
-    <div className={`mx-auto aspect-[1/1] w-full max-w-[600px] ${className}`}>
-      <canvas
-        className="relative -translate-x-[23%] translate-y-[6%] size-180 opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
-        ref={canvasRef}
-        onPointerDown={(e) =>
-          updatePointerInteraction(e.clientX - pointerInteractionMovement.current)
-        }
-        onPointerUp={() => updatePointerInteraction(null)}
-        onPointerOut={() => updatePointerInteraction(null)}
-        onMouseMove={(e) => updateMovement(e.clientX)}
-        onTouchMove={(e) =>
-          e.touches[0] && updateMovement(e.touches[0].clientX)
-        }
-      />
-    </div>
+    <>
+      <div className="flex relative top-22 justify-center w-full font-thin gap-2 z-10 ">
+        <button className='btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl text-primary-content' onClick={() => { }}>USA</button>
+        <button className='btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl text-primary-content'>Egypt</button>
+        <button className='btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl text-primary-content'>Japan</button>
+      </div>
+      <div className={`mx-auto aspect-[1/1] w-full max-w-[600px] ${className}`}>
+        <canvas
+          className="relative -translate-x-[23%] translate-y-[6%] size-180 opacity-0 transition-opacity duration-500 [contain:layout_paint_size]"
+          ref={canvasRef}
+        // onPointerDown={(e) =>
+        //   updatePointerInteraction(e.clientX - pointerInteractionMovement.current)
+        // }
+        // onPointerUp={() => updatePointerInteraction(null)}
+        // onPointerOut={() => updatePointerInteraction(null)}
+        // onMouseMove={(e) => updateMovement(e.clientX)}
+        // onTouchMove={(e) =>
+        //   e.touches[0] && updateMovement(e.touches[0].clientX)
+        // }
+        />
+      </div>
+    </>
   );
 }
