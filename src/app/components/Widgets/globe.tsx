@@ -49,7 +49,8 @@ export function Globe({
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
   const [r, setR] = useState(0);
-  let phi = 0;
+  let [phi, setPhi] = useState(0);
+  let [theta, setTheta] = useState(0);
   let width = 0;
 
   // State to hold the dynamic glowColor
@@ -93,20 +94,27 @@ export function Globe({
       setR(delta / 200);
     }
   };
-  const buttonClicked = false
-  const dick = false
-  let onRender = useCallback(
+  const [activeCountry, setActiveCountry] = useState("")
+
+  const setLocation = (location: [number, number], country: string) => {
+    setActiveCountry(country)
+    setPhi(location[0])
+    setTheta(location[1])
+  }
+
+  const onRender = useCallback(
     (state: Record<string, any>) => {
-      if (!pointerInteracting.current && !buttonClicked) {
-        phi += 0.005;
+      if (!pointerInteracting.current && !activeCountry) {
+        setPhi(phi += 0.005);
         state.phi = phi + r;
         state.width = width * 2;
         state.height = width * 2;
       } else {
-        state.phi = 1
+        state.phi = phi
+        state.theta = theta
       }
     },
-    [r],
+    [r, activeCountry, theta],
   );
 
   const onResize = () => {
@@ -136,9 +144,9 @@ export function Globe({
   return (
     <>
       <div className="flex relative top-22 justify-center w-full font-thin gap-2 z-10 ">
-        <button className='btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl text-primary-content' onClick={() => { }}>USA</button>
-        <button className='btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl text-primary-content'>Egypt</button>
-        <button className='btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl text-primary-content'>Japan</button>
+        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "USA" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([6.4, 0.4], 'USA') }}>USA</button>
+        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Egypt" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([4.3, 0.2], 'Egypt') }}>Egypt</button>
+        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Japan" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([2.37, 0.5], "Japan") }}>Japan</button>
       </div>
       <div className={`mx-auto aspect-[1/1] w-full max-w-[600px] ${className}`}>
         <canvas
