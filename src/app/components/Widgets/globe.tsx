@@ -3,6 +3,7 @@
 import createGlobe, { COBEOptions } from "cobe";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Color from "color";
+import { animate, useMotionValue } from "framer-motion";
 
 function hexToRgb(hex: string) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -49,6 +50,8 @@ export function Globe({
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
   const [r, setR] = useState(0);
+  const phiValue = useMotionValue(0)
+  const thetaValue = useMotionValue(0)
   let [phi, setPhi] = useState(0);
   let [theta, setTheta] = useState(0);
   let width = 0;
@@ -98,23 +101,28 @@ export function Globe({
 
   const setLocation = (location: [number, number], country: string) => {
     setActiveCountry(country)
-    setPhi(location[0])
-    setTheta(location[1])
+    animate(phiValue, location[0], {
+      duration: 2, // Animation duration in seconds
+      ease: "easeInOut", // Smooth easing function
+      onUpdate: (latest) => {
+        setPhi(Math.round(latest * 10) / 10); // Round to 1 decimal for smoother visuals
+      },
+    })
+    animate(thetaValue, location[1], {
+      duration: 2, // Animation duration in seconds
+      ease: "easeInOut", // Smooth easing function
+      onUpdate: (latest) => {
+        setTheta(Math.round(latest * 10) / 10); // Round to 1 decimal for smoother visuals
+      },
+    })
   }
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
-      if (!pointerInteracting.current && !activeCountry) {
-        setPhi(phi += 0.005);
-        state.phi = phi + r;
-        state.width = width * 2;
-        state.height = width * 2;
-      } else {
         state.phi = phi
         state.theta = theta
-      }
     },
-    [r, activeCountry, theta],
+    [phi, activeCountry, theta],
   );
 
   const onResize = () => {
@@ -146,7 +154,7 @@ export function Globe({
       <div className="flex relative top-22 justify-center w-full font-thin gap-2 z-10 ">
         <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "USA" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([6.4, 0.4], 'USA') }}>USA</button>
         <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Egypt" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([4.3, 0.2], 'Egypt') }}>Egypt</button>
-        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Japan" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([2.37, 0.5], "Japan") }}>Japan</button>
+        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Japan" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([2.4, 0.3], "Japan") }}>Japan</button>
       </div>
       <div className={`mx-auto aspect-[1/1] w-full max-w-[600px] ${className}`}>
         <canvas
