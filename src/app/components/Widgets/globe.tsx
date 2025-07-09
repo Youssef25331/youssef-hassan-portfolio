@@ -102,25 +102,32 @@ export function Globe({
   const setLocation = (location: [number, number], country: string) => {
     setActiveCountry(country)
     animate(phiValue, location[0], {
-      duration: 2, // Animation duration in seconds
+      duration: 4, // Animation duration in seconds
       ease: "easeInOut", // Smooth easing function
       onUpdate: (latest) => {
-        setPhi(Math.round(latest * 10) / 10); // Round to 1 decimal for smoother visuals
+        setPhi(latest); // Round to 1 decimal for smoother visuals
       },
     })
     animate(thetaValue, location[1], {
-      duration: 2, // Animation duration in seconds
+      duration: 4, // Animation duration in seconds
       ease: "easeInOut", // Smooth easing function
       onUpdate: (latest) => {
-        setTheta(Math.round(latest * 10) / 10); // Round to 1 decimal for smoother visuals
+        setTheta(latest); // Round to 1 decimal for smoother visuals
       },
     })
   }
 
   const onRender = useCallback(
     (state: Record<string, any>) => {
+      if (!pointerInteracting.current && !activeCountry) {
+        setPhi(0.005);
+        state.phi = phi + r;
+        state.width = width * 2;
+        state.height = width * 2;
+      } else {
         state.phi = phi
         state.theta = theta
+      }
     },
     [phi, activeCountry, theta],
   );
@@ -139,6 +146,8 @@ export function Globe({
       ...globeConfig,
       width: width * 2,
       height: width * 2,
+      // phi: phi,
+      // theta: theta,
       onRender,
     });
 
@@ -147,7 +156,7 @@ export function Globe({
     });
 
     return () => globe.destroy();
-  }, [globeConfig, onRender]); // Re-run when globeConfig changes
+  }, [globeConfig, onRender]);
 
   return (
     <>

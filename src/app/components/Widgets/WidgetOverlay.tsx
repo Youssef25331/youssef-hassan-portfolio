@@ -6,7 +6,6 @@ const WidgetOverlay: React.FC<{ children: React.ReactNode, title: string, text: 
   const [hovered, setHovered] = useState(false)
   const iconClasses: string = "size-12 origin-left text-neutral-600 transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75"
 
-  useEffect(() => { console.log(hovered) }, [hovered])
   return (
     <div
       className="size-full"

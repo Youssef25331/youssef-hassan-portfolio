@@ -1,5 +1,5 @@
 import React from 'react'
-import { Globe } from './globe'
+import GlobeTest from './globeTest'
 
 const LocationWidget = () => {
   return (
@@ -8,7 +8,7 @@ const LocationWidget = () => {
         <h1>Flexiable with any time-zone</h1>
         <h1 className='text-1xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white'>Connect at any time</h1>
       </div>
-      <Globe />
+      <GlobeTest/>
     </div>
   )
 }
