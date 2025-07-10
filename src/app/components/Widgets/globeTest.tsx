@@ -7,14 +7,33 @@ const GlobeTest = () => {
 
   const [activeCountry, setActiveCountry] = useState("")
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  let [theta, setTheta] = useState(0);
+  const thetaValue = useMotionValue(0)
+  const phiValue = useMotionValue(0)
+  let phi = useRef(0)
+
   const setSomethign = () => {
-    setActiveCountry('shit')
+    setActiveCountry('stuff')
   }
 
   useEffect(() => {
+    if (activeCountry) {
 
+      const targetPhi = 3; // e.g., for 'shit'
+      const targetTheta = 1;
+      animate(phiValue, targetPhi, {
+        duration: 2, ease: 'backInOut',
 
+        onUpdate: (latest) => {
+          phi.current = latest; // Update ref
+          console.log(phi)
+        },
+      });
+      animate(thetaValue, targetTheta, { duration: 2, ease: 'backInOut' });
+    }
+  }, [activeCountry, phiValue, thetaValue]);
 
+  useEffect(() => {
     const canvas = canvasRef.current;
     const globe = createGlobe(canvas!, {
       devicePixelRatio: 2,
@@ -37,37 +56,13 @@ const GlobeTest = () => {
         { location: [35, 136], size: 0.1, },
       ],
       onRender: (state) => {
-
-        let [phi, setPhi] = useState(0);
-        let [theta, setTheta] = useState(0);
-
-        const phiValue = useMotionValue(0)
-        const thetaValue = useMotionValue(0)
-
-        const setLocation = (location: [number, number]) => {
-          animate(phiValue, location[0], {
-            duration: 4, // Animation duration in seconds
-            ease: "easeInOut", // Smooth easing function
-            onUpdate: (latest) => {
-              setPhi(latest); // Round to 1 decimal for smoother visuals
-            },
-          })
-          animate(thetaValue, location[1], {
-            duration: 4, // Animation duration in seconds
-            ease: "easeInOut", // Smooth easing function
-            onUpdate: (latest) => {
-              setTheta(latest); // Round to 1 decimal for smoother visuals
-            },
-          })
-        }
-
-        setLocation([10, 10],)
-        state.phi = phi
+        state.phi = phi.current
+        state.theta = thetaValue.get();
       },
     })
     return () => globe.destroy();
 
-  }, [activeCountry]);
+  }, []);
 
 
   return (
