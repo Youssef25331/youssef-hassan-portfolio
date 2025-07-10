@@ -51,15 +51,11 @@ export function Globe({
   const pointerInteractionMovement = useRef(0);
   const [r, setR] = useState(0);
   const phiValue = useMotionValue(0)
-  const thetaValue = useMotionValue(0)
-  let [phi, setPhi] = useState(0);
-  let [theta, setTheta] = useState(0);
+  const thetaValue = useMotionValue(-0.2)
   let width = 0;
 
-  // State to hold the dynamic glowColor
   const [globeConfig, setGlobeConfig,] = useState<COBEOptions>(propConfig);
 
-  // Fetch the color when the component mounts
   useEffect(() => {
     const rootStyles = getComputedStyle(document.documentElement);
     const fetchedColor = rootStyles.getPropertyValue('--color-primary').trim();
@@ -74,7 +70,6 @@ export function Globe({
       (primaryColor.b / intensity),
     ];
 
-    // Update the config with the computed glowColor
     setGlobeConfig((prevConfig) => ({
       ...prevConfig,
       glowColor: [glowColor[0], glowColor[1], glowColor[2]],
@@ -98,39 +93,32 @@ export function Globe({
     }
   };
   const [activeCountry, setActiveCountry] = useState("")
+  const isCountry = useRef(false)
+  const [targetPhi, setTargetPhi] = useState(0)
+  const [targetTheta, setTargetTheta] = useState(0)
 
   const setLocation = (location: [number, number], country: string) => {
+    isCountry.current = true
+    setTargetPhi(location[0])
+    setTargetTheta(location[1])
     setActiveCountry(country)
-    animate(phiValue, location[0], {
-      duration: 4, // Animation duration in seconds
-      ease: "easeInOut", // Smooth easing function
-      onUpdate: (latest) => {
-        setPhi(latest); // Round to 1 decimal for smoother visuals
-      },
-    })
-    animate(thetaValue, location[1], {
-      duration: 4, // Animation duration in seconds
-      ease: "easeInOut", // Smooth easing function
-      onUpdate: (latest) => {
-        setTheta(latest); // Round to 1 decimal for smoother visuals
-      },
-    })
   }
 
-  const onRender = useCallback(
-    (state: Record<string, any>) => {
-      if (!pointerInteracting.current && !activeCountry) {
-        setPhi(0.005);
-        state.phi = phi + r;
-        state.width = width * 2;
-        state.height = width * 2;
-      } else {
-        state.phi = phi
-        state.theta = theta
-      }
-    },
-    [phi, activeCountry, theta],
-  );
+  useEffect(() => {
+    if (activeCountry) {
+      animate(phiValue, targetPhi, {
+        duration: 2,
+        ease: "easeInOut",
+      })
+      animate(thetaValue, targetTheta, {
+        duration: 2,
+        ease: "easeInOut",
+      })
+
+    } else {
+      phiValue.setCurrent(phiValue.get() + 0.01)
+    }
+  }, [activeCountry])
 
   const onResize = () => {
     if (canvasRef.current) {
@@ -146,9 +134,17 @@ export function Globe({
       ...globeConfig,
       width: width * 2,
       height: width * 2,
-      // phi: phi,
-      // theta: theta,
-      onRender,
+      phi: phiValue.get(),
+      theta: thetaValue.get(),
+      onRender: (state) => {
+        if (!isCountry.current) {
+          state.phi = phiValue.get()
+          phiValue.setCurrent(phiValue.get() - 0.005)
+        } else {
+          state.phi = phiValue.get()
+          state.theta = thetaValue.get()
+        }
+      },
     });
 
     setTimeout(() => {
@@ -156,7 +152,7 @@ export function Globe({
     });
 
     return () => globe.destroy();
-  }, [globeConfig, onRender]);
+  }, [globeConfig,]);
 
   return (
     <>
