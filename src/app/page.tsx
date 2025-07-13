@@ -1,4 +1,3 @@
-'use client'
 import { NavBarLoader } from "./components/Navbar";
 import '@fontsource-variable/outfit';
 import Hero from "./components/Hero";
@@ -7,33 +6,16 @@ import Widgets from "./components/Widgets";
 import Showcase from "./components/Showcase";
 import About from "./components/About";
 import Footer from "./components/Footer";
-import { useEffect, useRef } from "react";
-import Lenis from "lenis";
+import LenisScrollProvider from "./providers/lenis-provider";
 
 
 export default function Home() {
-
-  const lenisRef = useRef<Lenis>(null);
-
-  useEffect(() => {
-    const lenis = new Lenis
-    lenisRef.current = lenis
-    function raf(time: any) {
-      lenis.raf(time * 0.8)
-      requestAnimationFrame(raf)
-    }
-    requestAnimationFrame(raf)
-  }, [])
-
-  const scrollTo = (target: any) => {
-    if (lenisRef.current) {
-      lenisRef.current.scrollTo(target, { duration: 2, offset: -80 });
-    }
-  };
-
   return (
     <>
-      <NavBarLoader scrollTo={scrollTo} />
+      <NavBarLoader />
+      <LenisScrollProvider />
+
+
       <main className="flex flex-col gap-10">
         <div id="hero">
           <Hero />
@@ -42,16 +24,16 @@ export default function Home() {
           <Stack />
         </div>
         <div className="my-15">
-          <Widgets />
-        </div>
-        <div className="my-10" id="about">
           <About />
+          <Widgets />
         </div>
         <div className="my-15" id="projects">
           <Showcase />
         </div>
-          <Footer scrollTo={scrollTo} />
+        <Footer />
       </main>
+
+      {/* </LenisScrollProvider> */}
     </>
   );
 }

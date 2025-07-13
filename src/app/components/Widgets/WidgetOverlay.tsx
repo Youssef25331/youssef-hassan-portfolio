@@ -1,10 +1,26 @@
 'use client'
-import { LucideArrowRight } from 'lucide-react'
+import { LucideArrowRight, LucideMapPin, LucideNotebookPen, } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 
-const WidgetOverlay: React.FC<{ children: React.ReactNode, title: string, text: string, buttonText: string, icon?: React.ComponentType<{ className?: string }> }> = ({ children, title, text, buttonText, icon: IconComponent },) => {
+export const iconMap: any = {
+  notebookpen: LucideNotebookPen,
+  mappen: LucideMapPin
+};
+
+interface WidgetOverlayProps {
+  children: React.ReactNode;
+  title: string;
+  text: string;
+  buttonText: string;
+  iconName?: string; // Icon name as a string
+}
+
+const WidgetOverlay: React.FC<WidgetOverlayProps> = ({ children, title, text, buttonText, iconName },) => {
+
   const [hovered, setHovered] = useState(false)
   const iconClasses: string = "size-12 origin-left text-neutral-600 transform-gpu transition-all duration-300 ease-in-out group-hover:scale-75"
+  const IconComponent = iconName ? iconMap[iconName.toLowerCase()] : null;
+
 
   return (
     <div
@@ -14,8 +30,8 @@ const WidgetOverlay: React.FC<{ children: React.ReactNode, title: string, text: 
       <div className='relative w-full h-full flex justify-center items-center'>
         {children}
       </div>
-
       <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transform-gpu transition-all duration-300 group-hover:-translate-y-10 absolute bottom-0">
+        <div className="icon-align-vertical-justify-center"></div>
         {IconComponent ? <IconComponent className={iconClasses} /> : ""}
         <h1 className='max-w-lg text-neutral-400'>{title}</h1>
         <p className='text-xl font-semibold text-neutral-300'>{text}</p>

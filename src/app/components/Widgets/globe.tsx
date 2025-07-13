@@ -47,11 +47,17 @@ export function Globe({
   config?: COBEOptions;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  const phiValue = useMotionValue(0)
+  const thetaValue = useMotionValue(0)
+  const [activeCountry, setActiveCountry] = useState("")
+  const isCountry = useRef(false)
+  const [targetPhi, setTargetPhi] = useState(0)
+  const [targetTheta, setTargetTheta] = useState(0)
+
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
   const [r, setR] = useState(0);
-  const phiValue = useMotionValue(0)
-  const thetaValue = useMotionValue(-0.2)
   let width = 0;
 
   const [globeConfig, setGlobeConfig,] = useState<COBEOptions>(propConfig);
@@ -78,24 +84,20 @@ export function Globe({
     }));
   }, []);
 
-  const updatePointerInteraction = (value: number | null) => {
-    pointerInteracting.current = value;
-    if (canvasRef.current) {
-      canvasRef.current.style.cursor = value ? "grabbing" : "grab";
-    }
-  };
+  // const updatePointerInteraction = (value: number | null) => {
+  //   pointerInteracting.current = value;
+  //   if (canvasRef.current) {
+  //     canvasRef.current.style.cursor = value ? "grabbing" : "grab";
+  //   }
+  // };
 
-  const updateMovement = (clientX: number) => {
-    if (pointerInteracting.current !== null) {
-      const delta = clientX - pointerInteracting.current;
-      pointerInteractionMovement.current = delta;
-      setR(delta / 200);
-    }
-  };
-  const [activeCountry, setActiveCountry] = useState("")
-  const isCountry = useRef(false)
-  const [targetPhi, setTargetPhi] = useState(0)
-  const [targetTheta, setTargetTheta] = useState(0)
+  // const updateMovement = (clientX: number) => {
+  //   if (pointerInteracting.current !== null) {
+  //     const delta = clientX - pointerInteracting.current;
+  //     pointerInteractionMovement.current = delta;
+  //     setR(delta / 200);
+  //   }
+  // };
 
   const setLocation = (location: [number, number], country: string) => {
     isCountry.current = true
@@ -105,7 +107,6 @@ export function Globe({
   }
 
   useEffect(() => {
-    if (activeCountry) {
       animate(phiValue, targetPhi, {
         duration: 2,
         ease: "easeInOut",
@@ -115,9 +116,6 @@ export function Globe({
         ease: "easeInOut",
       })
 
-    } else {
-      phiValue.setCurrent(phiValue.get() + 0.01)
-    }
   }, [activeCountry])
 
   const onResize = () => {
@@ -139,7 +137,7 @@ export function Globe({
       onRender: (state) => {
         if (!isCountry.current) {
           state.phi = phiValue.get()
-          phiValue.setCurrent(phiValue.get() - 0.005)
+          phiValue.setCurrent((phiValue.get() - 0.005) %6.3)
         } else {
           state.phi = phiValue.get()
           state.theta = thetaValue.get()

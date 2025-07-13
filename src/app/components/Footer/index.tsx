@@ -1,10 +1,20 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import AnimatedButton from '../AnimatedButton'
 import { style } from 'framer-motion/client'
 import { LucideGithub, LucideLinkedin } from 'lucide-react'
+import { useLenis } from 'lenis/react'
 
-const Footer = ({ scrollTo }: { scrollTo: Function }) => {
+const Footer = () => {
+  const lenis = useLenis()
+
+  const scrollTo = (target: any) => {
+    if (lenis) {
+      lenis.scrollTo(target, { duration: 2, offset: -80 });
+    }
+  };
+
   return (
     <>
       <div id="footer">
