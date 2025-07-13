@@ -3,7 +3,6 @@ import ClipboardButton from './ClipboardButton'
 import LocationWidget from './LocationWidget'
 import ToolsWidget from './ToolsWidget'
 import WidgetOverlay from './WidgetOverlay'
-import { LucideGitGraph, LucideMapPin, LucideNotebookPen } from 'lucide-react'
 import Activity from './Activity'
 
 const Widgets = () => {

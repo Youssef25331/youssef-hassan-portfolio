@@ -13,7 +13,6 @@ const LenisScrollProvider = () => {
 
     const rafId = requestAnimationFrame(update)
 
-    console.log(lenisRef)
     return () => cancelAnimationFrame(rafId)
 
   }, [])
