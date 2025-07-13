@@ -14,8 +14,6 @@ export default function Home() {
     <>
       <NavBarLoader />
       <LenisScrollProvider />
-
-
       <main className="flex flex-col gap-10">
         <div id="hero">
           <Hero />
@@ -23,7 +21,7 @@ export default function Home() {
         <div id="stack">
           <Stack />
         </div>
-        <div className="my-15">
+        <div className="my-15" id="about">
           <About />
           <Widgets />
         </div>
