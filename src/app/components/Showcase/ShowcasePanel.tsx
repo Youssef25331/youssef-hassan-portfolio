@@ -1,11 +1,12 @@
 import { useScroll } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
 import React, { useEffect, useRef } from 'react'
 
-const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color,image, setActiveSlider }: {
+const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, setActiveSlider }: {
   sliderRef: React.RefObject<HTMLDivElement | null>,
   sliderChild: React.RefObject<HTMLDivElement | null>,
   color: string,
-  image:string,
+  image: string,
   setActiveSlider: React.Dispatch<React.SetStateAction<number>>,
   slideNumber: number
 }) => {
@@ -43,9 +44,24 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color,image, setAc
             background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
           }}
         ></div>
-        <div className="relative flex overflow-hidden justify-center items-end bg-cyan-900 w-full h-full rounded-2xl"
+        <div className="relative flex flex-col justify-between overflow-hidden enter items-center bg-cyan-900 w-full h-full rounded-2xl"
           style={{ background: `linear-gradient(180deg,${color} 63%, color-mix(in hsl, hsl(from ${color} h s 20%) 100%, ${color} 0%) 80%,color-mix(in hsl, hsl(from ${color} h s 30%) 100%, ${color} 0%) 100%)` }}>
+          <div className="mt-10 mx-7 flex items-center">
+            <h1
+              className={`text-2xl font-light`}
+              style={{ color: `hsl(from ${color} h s 70%)` }}
+            >
+              This project is about something and those thing sare pretty cool u should check it out because it's a very proj.
+            </h1>
+            <a href="
+              ">
+              <ArrowRight className='size-7'
+                style={{ color: `hsl(from ${color} h s 70%)` }}
+              />
+            </a>
+          </div>
           <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
+
           <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'
             style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}
           >
@@ -53,7 +69,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color,image, setAc
           </div>
         </div>
       </div>
-    </main>
+    </main >
   )
 }
 
