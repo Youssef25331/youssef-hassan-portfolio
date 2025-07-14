@@ -21,12 +21,9 @@ const Widgets = () => {
       <div className='grid w-full grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] mb-20 md:my-20 '>
         <div className="overflow-hidden transition duration-200 border rounded-3xl border-base-200 col-span-4">
           <div className='group relative w-full h-full flex flex-col justify-center items-center '>
-            <h1 className='absolute text-2xl text-shadow-main top-4'>Something cool I didn't think of yet</h1>
+            <h1 className='absolute text-2xl text-shadow-main top-4'>Im still trying to get in more color</h1>
             <WidgetOverlay title='' text='' buttonText='Connect Now' >
               <Activity />
-              <div className="container overflow-hidden w-130">
-
-              </div>
             </WidgetOverlay>
           </div>
         </div>
