@@ -34,7 +34,7 @@ const Footer = () => {
           </div >
         </div>
       </div>
-      <div id="footer-bottom" className='z-10 -mt-15 '>
+      <div id="footer-bottom" className='z-10 -mt-15 bg-base-100'>
         <div className="px-40 flex justify-between mb-10">
           <div className="flex flex-col gap-2">
             <img src="/yh.svg" alt="Vercel Logo" className='size-9 -ml-2 mb-2' />
@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='flex flex-col text-center align-center'>
+          <div className='flex flex-col text-center align-center '>
             <h1 className='text-sm text-white font-bold '>
               Navigate
             </h1>

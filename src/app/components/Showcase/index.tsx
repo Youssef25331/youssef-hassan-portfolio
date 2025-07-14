@@ -85,7 +85,6 @@ const Showcase = () => {
     }
   ]
 
-
   return (
     <main>
       <div className="flex flex-col justify-center gap-8">

@@ -55,9 +55,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
             >
               {title}
             </h1>
-            <a href={link}
-              target="_blank"
-            >
+            <a href={link} target="_blank">
 
               <ArrowRight className='size-7'
                 style={{ color: `hsl(from ${color} h s 70%)` }}

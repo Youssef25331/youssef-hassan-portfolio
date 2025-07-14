@@ -7,12 +7,13 @@ import Showcase from "./components/Showcase";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import LenisScrollProvider from "./providers/lenis-provider";
-
+import SnowfallEffect from "./components/SnowfallEffect";
 
 export default function Home() {
   return (
     <>
       <NavBarLoader />
+      <SnowfallEffect />
       <LenisScrollProvider />
       <main className="flex flex-col gap-10">
         <div id="hero">
