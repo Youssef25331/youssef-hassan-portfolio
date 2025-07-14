@@ -15,6 +15,8 @@ interface SliderItem {
   stack: StackItem[],
   color: string,
   image: string,
+  title: string,
+  link: string
 }
 type StackName = 'React' | 'TypeScript' | 'NodeJS' | 'Python' | 'Tailwind' | 'NextJS' | 'FramerMotion' | 'GSAP' | 'Nginx' | 'daisyUI' | 'ExpressJS' | 'Shadcn' | 'Vercel' | 'Sass' | 'AuthJS' | 'MongoDB';
 
@@ -48,7 +50,9 @@ const Showcase = () => {
       projectDescription: 'The MaVoid website reflects our vision with a sleek, user-focused design, driven by my contributions to the front-end creation, featuring intuitive layouts and smooth interactions. I also provided minor back-end support to ensure seamless functionality, enhancing the overall digital experience for our clients.', quotes: ["Engineered with Next.js and React for a lightning-fast, dynamic user experience, this site showcases cutting-edge performance.", 'Styled with Tailwind CSS and enhanced by Framer Motion, it delivers a sleek, animated interface that captivates visitors.', 'Secured with Auth.js and structured with Shadcn UI, it offers robust authentication and a modern, customizable design.'],
       stack: [stacks.NextJS, stacks.React, stacks.FramerMotion, stacks.Tailwind, stacks.Shadcn, stacks.AuthJS],
       image: "/projects/mavoid.png",
-      color: "#0c1e36"
+      color: "#0c1e36",
+      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       projectName: 'My Portfolio',
@@ -56,7 +60,9 @@ const Showcase = () => {
       quotes: ["Crafted using Next.js and TypeScript to ensure optimal performance and scalability.", "Showcasing a bold design philosophy, it blends cutting-edge aesthetics with effortless usability.", "Built to impress, it offers a smooth, responsive interface that adapts to every device with elegance."],
       stack: [stacks.Tailwind, stacks.NextJS, stacks.React, stacks.FramerMotion, stacks.GSAP, stacks.daisyUI, stacks.TypeScript, stacks.Vercel],
       image: "/projects/portfolio.png",
-      color: "#0e282a"
+      color: "#0e282a",
+      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
 
     {
@@ -64,14 +70,18 @@ const Showcase = () => {
       projectDescription: 'MovieDB, built with React and Sass, and hosted on Vercel, brings the latest movies to your fingertips by querying MovieDB for fresh releases, complete descriptions, and trailers.', quotes: ["Features a sleek, stylish interface showcasing the newest movies with detailed insights.", 'Seamlessly integrates MovieDB data for real-time updates and trailer previews.'],
       stack: [stacks.React, stacks.Vercel, stacks.Sass],
       image: "/projects/moviedb.png",
-      color: "#571163"
+      color: "#571163",
+      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
       projectName: 'MaVoid Unified Platform',
       projectDescription: 'The complete ERP and CRM solution designed specifically for Small and Medium Enterprises. Manage your entire business from one powerful platform.', quotes: ["Built with Node.js and Express.js, I helped craft a robust backend to handle core business operations seamlessly.", 'Enhanced with MongoDB, I ensured efficient data management and scalability for the platform.', 'Using React and Tailwind CSS, I contributed front-end tweaks for a polished, responsive user interface.', 'Integrated Nginx for optimized performance, with GSAP and Shadcn UI adding dynamic animations and modern styling, reflecting my collaborative efforts.'],
       stack: [stacks.Tailwind, stacks.NodeJS, stacks.React, stacks.GSAP, stacks.Nginx, stacks.ExpressJS, stacks.Shadcn, stacks.MongoDB],
       image: "/projects/mavoidportal.png",
-      color: "#22166c"
+      color: "#22166c",
+      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     }
   ]
 
@@ -86,7 +96,7 @@ const Showcase = () => {
               sliders.map((item, i) => {
                 return (
                   <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
-                    setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} />
+                    setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} title={sliders[i].title} link={sliders[i].link} />
                 )
               })
             }

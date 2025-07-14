@@ -2,13 +2,15 @@ import { useScroll } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import React, { useEffect, useRef } from 'react'
 
-const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, setActiveSlider }: {
+const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, title, link, setActiveSlider }: {
   sliderRef: React.RefObject<HTMLDivElement | null>,
   sliderChild: React.RefObject<HTMLDivElement | null>,
   color: string,
   image: string,
   setActiveSlider: React.Dispatch<React.SetStateAction<number>>,
-  slideNumber: number
+  slideNumber: number,
+  title: string
+  link: string
 }) => {
 
   const showcaseRef = useRef<HTMLDivElement>(null)
@@ -51,10 +53,12 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, setA
               className={`text-2xl font-light`}
               style={{ color: `hsl(from ${color} h s 70%)` }}
             >
-              This project is about something and those thing sare pretty cool u should check it out because it's a very proj.
+              {title}
             </h1>
-            <a href="
-              ">
+            <a href={link}
+              target="_blank"
+            >
+
               <ArrowRight className='size-7'
                 style={{ color: `hsl(from ${color} h s 70%)` }}
               />

@@ -137,7 +137,7 @@ export function Globe({
       onRender: (state) => {
         if (!isCountry.current) {
           state.phi = phiValue.get()
-          phiValue.setCurrent((phiValue.get() - 0.005) %6.3)
+          phiValue.setCurrent((phiValue.get() + 0.005) %6.3)
         } else {
           state.phi = phiValue.get()
           state.theta = thetaValue.get()
