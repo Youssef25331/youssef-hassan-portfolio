@@ -49,8 +49,7 @@ function AnimatedButton({ text }: { text?: string }) {
           </div>
           <div className=" w-full">
             <a className='block w-full overflow-hidden rounded-lg border bg-white/40 shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-blue-500/10 border-neutral-300 hover:border-blue-400 dark:border-neutral-700/50 dark:bg-neutral-800/30 dark:hover:border-blue-500/30 dark:hover:shadow-blue-900/5'
-              href="mailto:yousseft25331@gmail.com?subject=Let's%20make%20your%20idea%20together"
-            >
+              href="mailto:yousseft25331@gmail.com?subject=Let's%20make%20your%20idea%20together">
               <div className='flex items-center gap-x-3 border-b bg-gradient-to-r to-transparent p-4 border-neutral-200 dark:border-neutral-700/30 from-blue-900/20'>
                 <Mail className='size-5' />
                 Send an E-Mail

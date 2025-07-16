@@ -21,16 +21,18 @@ const Widgets = () => {
       <div className='grid w-full grid-cols-6 gap-4 md:max-w-full md:auto-rows-[19rem] mb-20 md:my-20 '>
         <div className="overflow-hidden transition duration-200 border rounded-3xl border-base-200 col-span-4">
           <div className='group relative w-full h-full flex flex-col justify-center items-center '>
-            <h1 className='absolute text-2xl text-shadow-main top-4'>Im still trying to get in more color</h1>
-            <WidgetOverlay title='' text='' buttonText='Connect Now' >
-              <Activity />
+            <WidgetOverlay title='' text='' buttonText='Check it out' url='https://github.com/Youssef25331' >
+              <h1 className='absolute text-2xl text-shadow-main top-7'>Activity is the heartbeat of innovation</h1>
+              <div className="mt-5">
+                <Activity />
+              </div>
             </WidgetOverlay>
           </div>
         </div>
         {/* <div className='flex flex-row gap-4 inset-shadow-[0_0px_70px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] border-base-200'> */}
         {/* </div> */}
         <div className='group relative flex size-full flex-col justify-between overflow-hidden  transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-m:h-[32rem]'>
-          <WidgetOverlay title='Remote' text='Egypt' buttonText='Connect Now' iconName='mapPen'   >
+          <WidgetOverlay title='Remote' text='Egypt' buttonText='Connect Now' iconName='mapPen' url={"mailto:yousseft25331@gmail.com?subject=Let's%20make%20your%20idea%20together"}>
             <LocationWidget />
           </WidgetOverlay>
         </div>
