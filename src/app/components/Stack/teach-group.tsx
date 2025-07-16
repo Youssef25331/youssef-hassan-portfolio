@@ -57,7 +57,7 @@ const TechItem = ({ item, index }: TechItemProps) => {
       <div className="relative h-9 w-9 flex">
         <Image layout="fill" objectFit="contain" src={item.icon || "/tech/react.png"} alt={item.name} />
       </div>
-      <div className="text-3xl text-white/70">{item.name}</div>
+      <div className="md:text-xl lg:text-3xl text-white/70">{item.name}</div>
     </motion.div>
   )
 }
@@ -94,7 +94,7 @@ const TechGroup = ({ group }: { group: StackGroup }) => {
         ref={h1Ref}
         initial={{ opacity: 0, y: h1InitialY }}
         style={{ opacity: h1Opacity, y: h1Y }}
-        className="text-6xl font-bold text-shadow-main basis-[100%] flex pl-[16%]"
+        className="text-6xl font-bold text-shadow-main basis-[100%] flex md::justify-center"
       >
         {group.groupName}
       </motion.h1>
