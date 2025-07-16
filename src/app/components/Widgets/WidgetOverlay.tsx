@@ -24,7 +24,7 @@ const WidgetOverlay: React.FC<WidgetOverlayProps> = ({ children, title, text, bu
 
   return (
     <div
-      className="size-full"
+      className="size-full bg-base-100"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}>
       <div className='relative w-full h-full flex justify-center items-center'>
