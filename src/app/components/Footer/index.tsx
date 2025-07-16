@@ -21,8 +21,8 @@ const Footer = () => {
         <div>
           <div className={'relative py-40 bg-cover bg-center w-full  bg-[url("/backgrounds/dark.png")]  flex flex-col justify-center items-center'} >
             <div className={'relative flex flex-col h-full w-full justify-center items-center gap-2 py-10 max-w-6xl z-2 '}>
-              <p className='text-5xl'>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-              <p className='text-5xl mb-3 mt-3'>Vivamus luctus posuere ante in cursus.</p>
+              <p className='text-5xl font-semibold'>I will help unleash Your Wildest ideas</p>
+              <p className='text-5xl mb-3 mt-3 font-semibold'>Let's make it together!</p>
               <AnimatedButton text="Let's Connect" />
               <p className='text-2xl mt-4 font-bold'>Available for any freelance projects & full-time roles. </p>
               <p className='text-xl text-white/70 mt-2 w-120 text-center'>My approach focuses on creating scalable, high-performing solutions tailored to both user needs and business objectives. By prioritizing performance, </p>
@@ -50,7 +50,9 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className='flex flex-col text-center align-center '>
+          <div className="flex items-center">
+
+          <div className='flex flex-col text-center items-center'>
             <h1 className='text-sm text-white font-bold '>
               Navigate
             </h1>
@@ -61,7 +63,8 @@ const Footer = () => {
               <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#projects")}>Projects</li>
             </ul>
           </div>
-          <div className="">
+          </div>
+          <div className="items-center flex">
             <h1 className='text-sm text-white/70'>
               Building elegant digital solutions <br />with a focus on user experience and technical excellence.
             </h1>

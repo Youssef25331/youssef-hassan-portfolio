@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="h-250 w-full flex content-center overflow-visible z-10">
       <div className="absolute -z-1 h-full w-full bg-base-100">
         <div className="absolute inset-0 "
-          style={{ background: "radial-gradient(circle at 50% 1%,hsl(from var(--color-primary) h s 12%) 0%,#0b0b0b 70%,transparent 100%)" }}
+          style={{ background: "radial-gradient(circle at 50% 1%,hsl(from var(--color-primary) h s 12%) 0%,var(--color-base-100) 70%,transparent 100%)" }}
         />
         <div
           className="z-2 absolute inset-0 pointer-events-none isolate opacity-30 contain-strict hidden lg:block">
