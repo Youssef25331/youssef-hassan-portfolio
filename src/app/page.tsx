@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <>
       <div className="z-200 fixed">
-
         <SmoothCursor />
         <NavBarLoader />
       </div>
@@ -36,8 +35,6 @@ export default function Home() {
         </div>
         <Footer />
       </main>
-
-      {/* </LenisScrollProvider> */}
     </>
   );
 }
