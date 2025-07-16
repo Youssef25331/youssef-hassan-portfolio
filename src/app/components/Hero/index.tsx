@@ -4,8 +4,8 @@ import { Sparkles } from "./sparkles"
 
 export default function Hero() {
   return (
-    <div className="h-250 w-full flex content-center overflow-visible z-10">
-      <div className="absolute -z-1 h-full w-full bg-base-100">
+    <div className="h-250 w-full flex justify-center content-center overflow-visible z-10">
+      <div className="relative -z-1 h-full w-full bg-base-100">
         <div className="absolute inset-0 "
           style={{ background: "radial-gradient(circle at 50% 1%,hsl(from var(--color-primary) h s 12%) 0%,var(--color-base-100) 70%,transparent 100%)" }}
         />
@@ -21,7 +21,7 @@ export default function Hero() {
         className="absolute -z-1 inset-0  w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
         color={"#FFF"}
       ></Sparkles>
-      <div className="mx-auto mt-55 w-full max-w-4xl">
+      <div className="absolute  w-full mt-32 md:mt-43 md:max-w-4xl lg:max-w-5xl">
         <div className="mb-6 mt-5 flex justify-center text-center">
           <p className='border border-base-200 rounded-4xl  shadow-none  bg-white/10 overflow-hidden h-fit px-4 py-0.5 z-100 text-white backdrop-blur-lg text-shadow-main '>
 
