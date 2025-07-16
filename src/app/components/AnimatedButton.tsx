@@ -32,28 +32,34 @@ function AnimatedButton({ text }: { text?: string }) {
         </div>
         <ArrowRight className='text-black size-4 absolute right-3.5' />
       </motion.button >
-      <dialog id="my_modal_5" className="modal backdrop-blur-[4px] modal-bottom flex justify-center">
+      <dialog id="my_modal_5" className="modal backdrop-blur-[4px] modal-bottom ">
         <SmoothCursor />
-        <div className="modal-box w-100">
+        <div className="modal-box w-100 gap-3 flex flex-col items-center mx-auto">
           <div className="flex gap-3 text-white/70">
             <a className='hover:text-white ' href='https://github.com/Youssef25331'>
-              <LucideGithub className='size-5'/>
+              <LucideGithub className='size-5' />
             </a>
             <a className='hover:text-white' href='https://www.linkedin.com/in/youssef-hassan-b023a526b/'>
               <LucideLinkedin className='size-5' />
             </a>
           </div>
-          <h3 className="font-bold text-lg">Fill a form</h3>
-          <h3 className="font-bold text-lg">Fill a form</h3>
+          <div className="flex justify-around w-full">
+            <button className="btn font-light text-md bg-base-300 border-none shadow-none">Fill a form</button>
+            <button className="btn font-light text-md bg-base-300 border-none shadow-none">Fill a form</button>
+          </div>
           <p className="py-4">Press ESC key or click the button below to close</p>
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="btn">Close</button>
+              <button className="btn bg-base-300 border-none shadow-none">Close</button>
             </form>
           </div>
         </div>
+
+        <form method="dialog" className="modal-backdrop"> <button>close</button>
+        </form>
       </dialog>
+
     </>
   )
 }
