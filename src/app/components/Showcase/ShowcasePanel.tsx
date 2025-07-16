@@ -56,19 +56,17 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
               {title}
             </h1>
             <a href={link} target="_blank">
-
               <ArrowRight className='size-7'
                 style={{ color: `hsl(from ${color} h s 70%)` }}
               />
             </a>
           </div>
           <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
-
-          <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer'
-            style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}
-          >
-            <img className='rounded-t-sm w-full h-full object-cover ' src={image} />
-          </div>
+          <a href={link} target='_blank'>
+            <div className='w-140 h-90 border-t-1 border-x-1 border-[#1c1c1c] rounded-t-md hover:w-155 hover:h-100 hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer' style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}>
+              <img className='rounded-t-sm w-full h-full object-cover ' src={image} />
+            </div>
+          </a>
         </div>
       </div>
     </main >

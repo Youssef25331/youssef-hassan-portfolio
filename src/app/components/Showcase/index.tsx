@@ -52,7 +52,7 @@ const Showcase = () => {
       image: "/projects/mavoid.png",
       color: "#0c1e36",
       title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      link: "https://mavoid.com"
     },
     {
       projectName: 'My Portfolio',
@@ -62,7 +62,7 @@ const Showcase = () => {
       image: "/projects/portfolio.png",
       color: "#0e282a",
       title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      link: ""
     },
 
     {
@@ -72,7 +72,7 @@ const Showcase = () => {
       image: "/projects/moviedb.png",
       color: "#571163",
       title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      link: "https://github.com/Youssef25331/simple-movie-app"
     },
     {
       projectName: 'MaVoid Unified Platform',
@@ -81,7 +81,7 @@ const Showcase = () => {
       image: "/projects/mavoidportal.png",
       color: "#22166c",
       title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
-      link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      link: "https://portal.mavoid.com"
     }
   ]
 

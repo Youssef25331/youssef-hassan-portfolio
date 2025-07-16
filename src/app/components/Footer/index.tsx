@@ -25,7 +25,9 @@ const Footer = () => {
               <p className='text-5xl mb-3 mt-3 font-semibold'>Let's make it together!</p>
               <AnimatedButton text="Let's Connect" />
               <p className='text-2xl mt-4 font-bold'>Available for any freelance projects & full-time roles. </p>
-              <p className='text-xl text-white/70 mt-2 w-120 text-center'>My approach focuses on creating scalable, high-performing solutions tailored to both user needs and business objectives. By prioritizing performance, </p>
+              <p className='text-xl text-white/70 mt-2 w-120 text-center'>
+                I help in crafting seamless user experiences that are scalable, high-performing and specifically tailored for your business needs.
+              </p>
             </div>
 
             <div className="absolute inset-0 z-0 bg-linear-to-b from-transparent to-base-100 opacity-100"></div>
