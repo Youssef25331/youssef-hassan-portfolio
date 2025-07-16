@@ -8,11 +8,16 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import LenisScrollProvider from "./providers/lenis-provider";
 import SnowfallEffect from "./components/SnowfallEffect";
+import { SmoothCursor } from "./components/Cursor";
 
 export default function Home() {
   return (
     <>
-      <NavBarLoader />
+      <div className="z-200 fixed">
+
+        <SmoothCursor />
+        <NavBarLoader />
+      </div>
       <SnowfallEffect />
       <LenisScrollProvider />
       <main className="flex flex-col gap-10">
