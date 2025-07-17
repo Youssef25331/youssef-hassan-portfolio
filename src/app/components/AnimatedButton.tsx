@@ -17,8 +17,8 @@ function AnimatedButton({ text }: { text?: string }) {
         onHoverStart={() => controls.start('fill')}
         onHoverEnd={() => controls.start('initial')}
         onClick={() => document.getElementById('my_modal_5').showModal()}
-        className='btn rounded-4xl text-shadow-none shadow-none font-thin  hover:text-black bg-white/10 overflow-hidden h-fit p-0 py-1.5 relative z-100'>
-        <motion.span animate={controls} className='ml-6 mr-6 font-medium text-[16px]'>
+        className='btn rounded-4xl text-shadow-none shadow-none font-thin  hover:text-black bg-white/10 overflow-hidden h-fit p-0 py-1 lg:py-1.5 relative z-100'>
+        <motion.span animate={controls} className='ml-6 mr-6 font-medium  lg:text-[16px]'>
           {!text ? "Animated Button" : text}
         </motion.span>
         <motion.div

@@ -4,11 +4,10 @@ import { Sparkles } from "./sparkles"
 
 export default function Hero() {
   return (
-    <div className="h-250 w-full flex justify-center content-center overflow-visible z-10">
+    <div className="h-[100vh] w-full flex justify-center content-center overflow-visible z-10">
       <div className="relative -z-1 h-full w-full bg-base-100">
-        <div className="absolute inset-0 "
-          style={{ background: "radial-gradient(circle at 50% 1%,hsl(from var(--color-primary) h s 12%) 0%,var(--color-base-100) 70%,transparent 100%)" }}
-        />
+        <div className="absolute inset-0"
+          style={{ background: "radial-gradient(circle at top,hsl(from var(--color-primary) h s 12%) 0%,var(--color-base-100) 70%,transparent 100%)" }} />
         <div
           className="z-2 absolute inset-0 pointer-events-none isolate opacity-30 contain-strict hidden lg:block">
         </div>
@@ -21,27 +20,28 @@ export default function Hero() {
         className="absolute -z-1 inset-0  w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
         color={"#FFF"}
       ></Sparkles>
-      <div className="absolute  w-full mt-32 md:mt-43 md:max-w-4xl lg:max-w-5xl">
+      <div className="absolute  w-full mt-24 lg:mt-[20vh] md:mt-43 md:max-w-4xl lg:max-w-5xl flex flex-col items-center">
         <div className="mb-6 mt-5 flex justify-center text-center">
-          <p className='border border-base-200 rounded-4xl  shadow-none  bg-white/10 overflow-hidden h-fit px-4 py-0.5 z-100 text-white backdrop-blur-lg text-shadow-main '>
-
+          <p className='border border-base-200 rounded-4xl  shadow-none text-sm lg:text-base  bg-white/10 overflow-hidden h-fit px-4 py-0.5 z-100 text-white backdrop-blur-lg text-shadow-main '>
             welcome to my website
           </p>
         </div>
         <div className="text-center text-foreground">
-          <div className="text-6xl font-bold">
-            Transform your ideas into
+          <div className="w-110 md:w-full">
+            <div className="text-4xl lg:text-6xl font-bold">
+              Transform your ideas into
+            </div>
+            <div className="text-4xl lg:text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#062C3D] pb-2">
+              Beautiful digital experiences
+            </div>
+            <div className="mt-2 lg:mt-6">
+              <span className="text-white/70 text-xl">
+                Hi, I'm Youssef Hassan and Full Stack Developer and Software Engineer
+              </span>
+            </div >
           </div>
-          <div className="text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[#062C3D] pb-2">
-            Beautiful digital experiences
-          </div>
-          <div className="mt-6">
-            <span className="text-white/70 text-xl">
-              Hi, I'm Youssef Hassan and Full Stack Developer and Software Engineer
-            </span>
-          </div >
         </div>
-        <div className="mt-10 flex justify-center">
+        <div className="mt-4 lg:mt-10 flex justify-center">
           <AnimatedButton text="Get In Touch" />
         </div>
       </div>
