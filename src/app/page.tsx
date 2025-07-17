@@ -23,7 +23,7 @@ export default function Home() {
         <div id="hero">
           <Hero />
         </div>
-        <div id="stack" className="">
+        <div id="stack">
           <Stack />
         </div>
         <div className="my-15" id="about">
