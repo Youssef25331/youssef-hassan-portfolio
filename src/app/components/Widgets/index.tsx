@@ -29,18 +29,18 @@ const Widgets = () => {
             </WidgetOverlay>
           </div>
         </div>
-        <div className='group relative flex size-full flex-col justify-between overflow-hidden  transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 md:row-span-2 max-md:h-[32rem]'>
+        <div className='group relative flex size-full flex-col justify-between overflow-hidden  transition duration-200 border rounded-3xl border-base-200 col-span-6 sm:col-span-3 md:col-span-3 lg:col-span-2 sm:row-span-2 max-md:h-[32rem]'>
           <WidgetOverlay title='Remote' text='Egypt' buttonText='Connect Now' iconName='mapPen' url={"mailto:yousseft25331@gmail.com?subject=Let's%20make%20your%20idea%20together"}>
             <LocationWidget />
           </WidgetOverlay>
         </div>
-        <div className='group h-[19rem] relative border rounded-3xl border-base-200 col-spawn-6 sm:col-span-3 lg:col-span-2 overflow-hidden  flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200 '>
+        <div className='group md:h-[19rem]  relative border rounded-3xl border-base-200 col-span-6 sm:col-span-3  lg:col-span-2 overflow-hidden  flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200 '>
           <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' iconName='notebookPen' >
             <ToolsWidget delay={60} group={toolGroup} />
           </WidgetOverlay>
         </div>
-        <div className='bg-base-100 group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6 md:col-span-3 lg:col-span-2 max-md:h-[19rem]'>
-          <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab   overflow-hidden h-73'>
+        <div className='bg-base-100 group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6  sm:col-span-3 lg:col-span-2 max-sm:h-[19rem]'>
+          <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab overflow-hidden h-full'>
             <h1 className='font-bold text-3xl text-center text-shadow-main'>
               Let's dive into your next<br />project together
             </h1>
