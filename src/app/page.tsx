@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <SnowfallEffect />
       <LenisScrollProvider />
-      <main className="flex flex-col gap-10">
+      <main className="flex flex-col gap-10 ">
         <div id="hero">
           <Hero />
         </div>

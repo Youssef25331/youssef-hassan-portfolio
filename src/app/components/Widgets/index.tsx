@@ -24,7 +24,7 @@ const Widgets = () => {
             <WidgetOverlay title='' text='' buttonText='Check it out' url='https://github.com/Youssef25331' >
               <h1 className='absolute text-2xl text-shadow-main top-7'>Activity is the heartbeat of innovation</h1>
               <div className="mt-5">
-                <Activity />
+                {/* <Activity /> */}
               </div>
             </WidgetOverlay>
           </div>

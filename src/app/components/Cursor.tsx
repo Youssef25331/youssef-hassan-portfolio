@@ -132,8 +132,8 @@ export function SmoothCursor({
         Math.pow(velocity.current.x, 2) + Math.pow(velocity.current.y, 2),
       );
 
-      cursorX.set(currentPos.x+10);
-      cursorY.set(currentPos.y+10);
+      cursorX.set(currentPos.x + 10);
+      cursorY.set(currentPos.y + 10);
 
       if (speed > 0.1) {
         const currentAngle = -45
@@ -167,7 +167,7 @@ export function SmoothCursor({
       });
     };
 
-    document.body.style.cursor = "unset";
+    document.body.style.cursor = "";
     window.addEventListener("mousemove", throttledMouseMove);
 
     return () => {
@@ -197,6 +197,7 @@ export function SmoothCursor({
         type: "spring",
         stiffness: 400,
         damping: 30,
+        duration:0
       }}
       className="z-201 fixed"
     >
