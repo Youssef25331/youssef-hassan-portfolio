@@ -19,21 +19,21 @@ function Stack() {
 
   const tools = {
     groupName: "Tools",
-    items: [{ name: 'Postman', icon: '/tech/postman.png' }, { name: "Vercel", icon: '/tech/vercel.png' }, { name: "Git", icon: '/tech/git.png' }, { name: "Doccker", icon: '/tech/docker.png' }, { name: "Nginx", icon: '/tech/nginx.png' }, { name: "Linux", icon: '/tech/linux.png' }, { name: "Neovim", icon: '/tech/neovim.png' },]
+    items: [{ name: 'Postman', icon: '/tech/postman.png' }, { name: "Vercel", icon: '/tech/vercel.png' }, { name: "Git", icon: '/tech/git.png' }, { name: "Docker", icon: '/tech/docker.png' }, { name: "Nginx", icon: '/tech/nginx.png' }, { name: "Linux", icon: '/tech/linux.png' }, { name: "Neovim", icon: '/tech/neovim.png' },]
   }
 
   return (
     <main id='stack'>
       <div className="flex justify-center gap-10">
-        <div className='flex gap-2 text-shadow-main text-2xl md:justify-center basis-full '>
-          <div className="flex w-84">
+        <div className='flex text-shadow-main text-2xl justify-start lg:justify-center basis-full'>
+          <div className="flex w-84 gap-2 items-center">
             <Spinner />
-            <h1 >MY STACK</h1>
+            <h1>MY STACK</h1>
           </div>
         </div>
-        <div className='basis-full'/>
+        <div className='basis-full' />
       </div>
-      <div className='flex flex-col gap-30 mt-4'>
+      <div className='flex flex-col gap-8 md:gap-15 lg:gap-30 mt-4'>
         <TechGroup group={frontend} />
         <TechGroup group={backend} />
         <TechGroup group={database} />

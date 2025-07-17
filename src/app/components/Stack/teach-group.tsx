@@ -51,10 +51,10 @@ const TechItem = ({ item, index }: TechItemProps) => {
       ref={ref}
       initial={{ opacity: 0, y: initialY }}
       style={{ opacity, y }}
-      className="flex gap-2"
+      className="flex gap-2 items-center"
       key={item.name}
     >
-      <div className="relative h-9 w-9 flex">
+      <div className="flex relative h-6 w-6 lg:w-9 lg:h-9 ">
         <Image layout="fill" objectFit="contain" src={item.icon || "/tech/react.png"} alt={item.name} />
       </div>
       <div className="md:text-xl lg:text-3xl text-white/70">{item.name}</div>
@@ -89,19 +89,18 @@ const TechGroup = ({ group }: { group: StackGroup }) => {
   }, [scrollY, h1Opacity, h1Y])
 
   return (
-    <div className="flex gap-10 mb-10">
+    <div className="flex  mb-10">
       <motion.h1
         ref={h1Ref}
         initial={{ opacity: 0, y: h1InitialY }}
         style={{ opacity: h1Opacity, y: h1Y }}
-        className="text-6xl font-bold text-shadow-main basis-full flex md:justify-center "
+        className="text-4xl md:text-6xl font-bold text-shadow-main basis-full flex justify-start lg:justify-center"
       >
-        <div className="flex w-84">
-
-        {group.groupName}
+        <div className="flex w-60 md:w-[55vw] lg:w-84">
+          {group.groupName}
         </div>
       </motion.h1>
-      <div className="flex flex-wrap basis-full gap-x-3 gap-y-2">
+      <div className="flex flex-wrap basis-full gap-x-3 gap-y-2 min-w-90">
         {group.items.map((item, index) => (
           <React.Fragment key={item.name}>
             {index % 3 === 0 && <div className="basis-full "></div>}
