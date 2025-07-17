@@ -89,16 +89,19 @@ const TechGroup = ({ group }: { group: StackGroup }) => {
   }, [scrollY, h1Opacity, h1Y])
 
   return (
-    <div className="flex justify-center gap-10 mb-10">
+    <div className="flex gap-10 mb-10">
       <motion.h1
         ref={h1Ref}
         initial={{ opacity: 0, y: h1InitialY }}
         style={{ opacity: h1Opacity, y: h1Y }}
-        className="text-6xl font-bold text-shadow-main basis-[100%] flex md::justify-center"
+        className="text-6xl font-bold text-shadow-main basis-full flex md:justify-center "
       >
+        <div className="flex w-84">
+
         {group.groupName}
+        </div>
       </motion.h1>
-      <div className="flex flex-wrap basis-[100%] gap-x-3 gap-y-2 ">
+      <div className="flex flex-wrap basis-full gap-x-3 gap-y-2">
         {group.items.map((item, index) => (
           <React.Fragment key={item.name}>
             {index % 3 === 0 && <div className="basis-full "></div>}
