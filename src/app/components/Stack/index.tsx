@@ -25,7 +25,7 @@ function Stack() {
   return (
     <main id='stack'>
       <div className="flex justify-center">
-        <div className='flex text-shadow-main text-2xl justify-start lg:justify-center basis-full'>
+        <div className='flex text-shadow-main text-sm md:text-lg lg:text-2xl justify-start lg:justify-center basis-full'>
           <div className="flex w-66 gap-2 items-center">
             <Spinner />
             <h1>MY STACK</h1>
