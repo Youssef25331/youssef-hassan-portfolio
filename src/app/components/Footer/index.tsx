@@ -18,14 +18,14 @@ const Footer = () => {
   return (
     <>
       <div id="footer">
-        <div>
+        <div className=''>
           <div className={'relative py-40 bg-cover bg-center w-full  bg-[url("/backgrounds/dark.png")]  flex flex-col justify-center items-center'} >
             <div className={'relative flex flex-col h-full w-full justify-center items-center gap-2 py-10 max-w-6xl z-2 '}>
-              <p className='text-5xl font-semibold'>I will help unleash Your Wildest ideas</p>
-              <p className='text-5xl mb-3 mt-3 font-semibold'>Let's make it together!</p>
+              <p className='text-2xl text-sm:text-3xl md:text-4xl lg:text-5xl font-semibold'>I will help unleash Your Wildest ideas</p>
+              <p className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 mt-3 font-semibold'>Let's make it together!</p>
               <AnimatedButton text="Let's Connect" />
-              <p className='text-2xl mt-4 font-bold'>Available for any freelance projects & full-time roles. </p>
-              <p className='text-xl text-white/70 mt-2 w-120 text-center'>
+              <p className='sm:text-md md:text-xl lg:text-2xl mt-4 font-bold'>Available for any freelance projects & full-time roles. </p>
+              <p className='text-xs sm:text-sm md:text-lg lg:text-xl text-white/70 mt-2 max-sm:w-80 w-120 text-center'>
                 I help in crafting seamless user experiences that are scalable, high-performing and specifically tailored for your business needs.
               </p>
             </div>
@@ -45,10 +45,10 @@ const Footer = () => {
             <p className='text-xs md:text-sm text-white/70 '>© {new Date().getFullYear()} Youssef Hassan | Built with Next.js</p>
             <div className="flex gap-2 text-white/70 items-center">
               <a className='hover:text-white' href='https://github.com/Youssef25331'>
-                <LucideGithub className='max-md:size-5'/>
+                <LucideGithub className='max-md:size-5' />
               </a>
               <a className='hover:text-white' href='https://www.linkedin.com/in/youssef-hassan-b023a526b/'>
-                <LucideLinkedin className='max-md:size-5'/>
+                <LucideLinkedin className='max-md:size-5' />
               </a>
             </div>
           </div>
