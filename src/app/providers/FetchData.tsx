@@ -54,7 +54,7 @@ query($userName:String!) {
         const day: Activity = {
           date: week[j].date,
           count: week[j].contributionCount,
-          level: week[j].contributionCount ? Math.ceil(week[j].contributionCount / 3) : 0
+          level: week[j].contributionCount ? Math.ceil(week[j].contributionCount / 4) : 0
         }
         days.push(day)
       }

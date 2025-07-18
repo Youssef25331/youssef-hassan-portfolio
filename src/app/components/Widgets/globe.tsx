@@ -155,13 +155,13 @@ export function Globe({
   return (
     <>
       <div className="flex relative top-4 justify-center w-full font-thin gap-2 z-10 ">
-        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "USA" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([6.4, 0.4], 'USA') }}>USA</button>
-        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Egypt" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([4.3, 0.2], 'Egypt') }}>Egypt</button>
-        <button className={`btn text-shadow-none border-none btn-soft leading-0 px-7 text-xs h-8 rounded-1xl ${activeCountry == "Japan" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([2.4, 0.3], "Japan") }}>Japan</button>
+        <button className={`btn text-shadow-none border-none btn-soft max-md:px-5 px-7 text-xs max-md:h-7 h-8 rounded-1xl ${activeCountry == "USA" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([6.4, 0.4], 'USA') }}>USA</button>
+        <button className={`btn text-shadow-none border-none btn-soft max-md:px-5 px-7 text-xs max-md:h-7 h-8 rounded-1xl ${activeCountry == "Egypt" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([4.3, 0.2], 'Egypt') }}>Egypt</button>
+        <button className={`btn text-shadow-none border-none btn-soft max-md:px-5 px-7 text-xs max-md:h-7 h-8 rounded-1xl ${activeCountry == "Japan" ? "text-[color-mix(in_oklab,var(--color-primary)_100%,#ffffff_80%)] bg-primary" : "text-primary-content"}`} onClick={() => { setLocation([2.4, 0.3], "Japan") }}>Japan</button>
       </div>
       <div className={`mx-auto aspect-[1/1] w-full max-w-[600px] ${className} justify-center flex`}>
         <canvas
-          className="absolute  size-160 opacity-0 translate-y-10 transition-opacity duration-500 [contain:layout_paint_size]"
+          className="absolute size-180 opacity-0 max-md:-translate-y-5 translate-y-10 transition-opacity duration-500 [contain:layout_paint_size]"
           ref={canvasRef}
         // onPointerDown={(e) =>
         //   updatePointerInteraction(e.clientX - pointerInteractionMovement.current)

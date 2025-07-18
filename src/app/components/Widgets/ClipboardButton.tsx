@@ -13,8 +13,7 @@ function ClipboardButton() {
     <motion.div onClick={() => {
       setCopied(true)
       navigator.clipboard.writeText("yousseft25331@gmail.com")
-    }} className='flex items-center gap-2 inset-shadow-[0_0px_20px_rgba(30,30,30,1)] transition duration-200 cursor-pointer rounded-lg px-4 py-3'>
-
+    }} className='flex text-base sm:text-sm md:text-base items-center gap-2 inset-shadow-[0_0px_20px_rgba(30,30,30,1)] transition duration-200 cursor-pointer rounded-lg px-4 py-3'>
       {!copied ? <LucideCopy className='size-4' /> : <LucideCheck />}
       {!copied ? "yousseft25331@gmail.com" : "Hope to hear from you soon"}
       <motion.div initial={{ y: 140, opacity: 0 }} animate={{ y: copied ? 0 : 140, opacity: copied ? 1 : 0 }} transition={{ duration: 0.8, ease: "backInOut" }} className="fixed left-10 border border-base-200 bottom-15 w-70 h-13 bg-[#131313] z-100 rounded-md flex p-2">
