@@ -38,38 +38,37 @@ const Footer = () => {
         </div>
       </div>
       <div id="footer-bottom" className='z-10 -mt-15 bg-base-100'>
-        <div className="px-40 flex justify-between mb-10">
-          <div className="flex flex-col gap-2">
-            <img src="/yh.svg" alt="Vercel Logo" className='size-9 -ml-2 mb-2' />
-            <p className='text-sm text-white/70 '>Hey there! I'm Youssef, a full-stack developer,<br />freelancer, and creative problem-solver.<br />Glad you stopped by my site!</p>
-            <p className='text-sm text-white/70 '>© {new Date().getFullYear()} Youssef Hassan | Built with Next.js</p>
-            <div className="flex gap-2 text-white/70">
+        <div className="px-5 md:px-[8vw] flex justify-between mb-10 max-sm:justify-center">
+          <div className="flex flex-col gap-2 max-sm:items-center">
+            <img src="/yh.svg" alt="Vercel Logo" className='size-6 lg:size-9 -ml-2 mb-2' />
+            <p className='text-xs md:text-sm text-white/70 max-sm:text-center'>Hey there! I'm Youssef, a full-stack developer,<br />freelancer, and creative problem-solver.<br />Glad you stopped by my site!</p>
+            <p className='text-xs md:text-sm text-white/70 '>© {new Date().getFullYear()} Youssef Hassan | Built with Next.js</p>
+            <div className="flex gap-2 text-white/70 items-center">
               <a className='hover:text-white' href='https://github.com/Youssef25331'>
-                <LucideGithub />
+                <LucideGithub className='max-md:size-5'/>
               </a>
               <a className='hover:text-white' href='https://www.linkedin.com/in/youssef-hassan-b023a526b/'>
-                <LucideLinkedin />
+                <LucideLinkedin className='max-md:size-5'/>
               </a>
             </div>
           </div>
 
-          <div className="flex items-center">
-
-          <div className='flex flex-col text-center items-center'>
-            <h1 className='text-sm text-white font-bold '>
-              Navigate
-            </h1>
-            <ul className='text-white/70'>
-              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#hero")}>Home</li>
-              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#stack")}>My Stack</li>
-              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#about")}>About</li>
-              <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#projects")}>Projects</li>
-            </ul>
+          <div className="flex items-center max-md:hidden">
+            <div className='text-sm flex flex-col text-center items-center'>
+              <h1 className=' text-white font-bold '>
+                Navigate
+              </h1>
+              <ul className='text-white/70'>
+                <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#hero")}>Home</li>
+                <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#stack")}>My Stack</li>
+                <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#about")}>About</li>
+                <li className='hover:text-white hover:cursor-pointer' onClick={() => scrollTo("#projects")}>Projects</li>
+              </ul>
+            </div>
           </div>
-          </div>
-          <div className="items-center mt-10 flex">
-            <h1 className='text-sm text-white/70'>
-              Building elegant digital solutions <br />with a focus on user experience <br/>and technical excellence.
+          <div className="items-center md:mt-10 flex max-md:text-sm max-sm:hidden">
+            <h1 className='text-white/70'>
+              Building elegant digital solutions <br />with a focus on user experience <br />and technical excellence.
             </h1>
           </div>
         </div>
