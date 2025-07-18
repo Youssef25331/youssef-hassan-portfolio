@@ -24,14 +24,14 @@ function Stack() {
 
   return (
     <main id='stack'>
-      <div className="flex justify-center gap-10">
+      <div className="flex justify-center">
         <div className='flex text-shadow-main text-2xl justify-start lg:justify-center basis-full'>
-          <div className="flex w-84 gap-2 items-center">
+          <div className="flex w-66 gap-2 items-center">
             <Spinner />
             <h1>MY STACK</h1>
           </div>
         </div>
-        <div className='basis-full' />
+        <div className='max-lg:basis-full w-330' />
       </div>
       <div className='flex flex-col gap-8 md:gap-15 lg:gap-30 mt-4'>
         <TechGroup group={frontend} />

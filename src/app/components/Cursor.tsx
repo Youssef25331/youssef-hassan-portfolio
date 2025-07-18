@@ -194,10 +194,8 @@ export function SmoothCursor({
       initial={{ scale: 0 }}
       animate={{ scale: 1 }}
       transition={{
-        type: "spring",
-        stiffness: 400,
-        damping: 30,
-        duration:0
+        ease:'linear',
+        duration:0.01
       }}
       className="z-201 fixed"
     >

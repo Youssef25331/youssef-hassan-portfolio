@@ -14,7 +14,7 @@ export function NavBarLoader() {
 
   const navItems = [
     { name: 'Home', url: '#hero', },
-    { name: 'My Stack', url: '#stack', },
+    { name: 'Stack', url: '#stack', },
     { name: 'About', url: '#about', },
     { name: 'Projects', url: '#projects', },
     { name: 'Footer', url: '#footer', }

@@ -31,6 +31,7 @@ const Footer = () => {
             </div>
 
             <div className="absolute inset-0 z-0 bg-linear-to-b from-transparent to-base-100 opacity-100"></div>
+            <div className="absolute inset-0 z-0 bg-linear-to-b from-transparent to-base-100 opacity-100"></div>
             <div className="absolute inset-0 z-0 bg-linear-to-b from-base-100 to-transparent opacity-100"></div>
             <div className="absolute inset-0 z-0 bg-base-100 opacity-65"></div>
           </div >
@@ -66,9 +67,9 @@ const Footer = () => {
             </ul>
           </div>
           </div>
-          <div className="items-center flex">
+          <div className="items-center mt-10 flex">
             <h1 className='text-sm text-white/70'>
-              Building elegant digital solutions <br />with a focus on user experience and technical excellence.
+              Building elegant digital solutions <br />with a focus on user experience <br/>and technical excellence.
             </h1>
           </div>
         </div>
