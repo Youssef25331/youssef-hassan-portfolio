@@ -89,20 +89,20 @@ const TechGroup = ({ group }: { group: StackGroup }) => {
   }, [scrollY, h1Opacity, h1Y])
 
   return (
-    <div className="flex mb-10">
+    <div className="flex mb-10 min-w-125">
       <motion.h1
         ref={h1Ref}
         initial={{ opacity: 0, y: h1InitialY }}
         style={{ opacity: h1Opacity, y: h1Y }}
-        className="text-4xl md:text-6xl font-bold text-shadow-main basis-full flex justify-start lg:justify-center">
-        <div className="flex w-60 md:w-[55vw] lg:w-66">
+        className="text-4xl md:text-6xl font-bold text-shadow-main basis-full flex justify-start lg:justify-center ">
+        <div className="flex md:w-[55vw] lg:w-66">
           {group.groupName}
         </div>
       </motion.h1>
       <div className="flex flex-wrap max-lg:basis-full gap-x-3 gap-y-2 w-330">
         {group.items.map((item, index) => (
           <React.Fragment key={item.name}>
-            {index % 3 === 0 && <div className="basis-full "></div>}
+            {index % 3 === 0 && <div className="basis-full max-sm:hidden"></div>}
             <TechItem item={item} index={index} />
           </React.Fragment>
         ))}
