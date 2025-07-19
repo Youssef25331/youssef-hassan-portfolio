@@ -43,8 +43,8 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
 
   return (
     <main>
-      <div className="flex flex-col justiy-center items-center w-full ">
-        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-80 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
+      <div className="flex flex-col justiy-center items-center w-full min-w-120">
+        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-100 md:h-80 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
           <div className="absolute inset-x-0 top-0 w-full h-px"
             style={{
               background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
@@ -74,13 +74,16 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
             </a>
           </div>
         </div>
-        <div id="bottom-disc">
+        <div id="bottom-disc" className='px-4 py-2  inline lg:hidden'>
           <h1 className='text-xl'>{name}</h1>
           <h1 className='text-white/70'>{title}</h1>
-          <div className="grid grid-cols-5 gap-y-3">
+          <div className="flex flex-wrap mt-3 gap-2">
             {stack.map((e) => {
               return (
-                <p className='text-xs'>{e.name}</p>
+                <p className={`text-xs w-fit rounded-md px-4 py-1 self-center`}
+
+                  style={{ color: `hsl(from ${color} h s 80%)`, backgroundColor: color }}>
+                  {e.name}</p>
               )
 
             })}
