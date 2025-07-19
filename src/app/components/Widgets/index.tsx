@@ -41,7 +41,7 @@ const Widgets = () => {
         </div>
         <div className='bg-base-100 group size-full flex-col justify-between overflow-hidden inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] transition duration-200 border rounded-3xl border-base-200 col-span-6  sm:col-span-3 lg:col-span-2 max-sm:h-[19rem]'>
           <div className='flex flex-col gap-4 justify-center items-center transition duration-200 cursor-grab overflow-hidden h-full'>
-            <h1 className='font-bold text-4xl sm:text-xl md:text-3xl text-center text-shadow-main'>
+            <h1 className='font-bold text-2xl lg:text-4xl sm:text-xl md:text-3xl text-center text-shadow-main'>
               Let's dive into your next<br />project together
             </h1>
             <ClipboardButton />
