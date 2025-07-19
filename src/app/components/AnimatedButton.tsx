@@ -45,7 +45,7 @@ function AnimatedButton({ text }: { text?: string }) {
           </div>
           <div className="text-white/70 h-9 items-center justify-center rounded-lg p-[3px] grid w-full grid-cols-2 dark:bg-neutral-800/50 gap-">
             <button className="font-light text-sm bg-[#262626] border border-base-200 text-white rounded-lg shadow-none px-2 py-1">Send an E-Mail</button>
-            <button className="font-light text-sm  rounded-lg shadow-none px-2 py-1">Send a Form</button>
+            <button className="font-light text-sm  rounded-lg shadow-none px-2 py-1 text-error ">Send a Form <span className='text-[9px]'>(Unavailable)</span></button>
           </div>
           <div className=" w-full">
             <a className='block w-full overflow-hidden rounded-lg border bg-white/40 shadow-sm transition-all duration-300 hover:shadow-md hover:shadow-blue-500/10 border-neutral-300 hover:border-blue-400 dark:border-neutral-700/50 dark:bg-neutral-800/30 dark:hover:border-blue-500/30 dark:hover:shadow-blue-900/5'

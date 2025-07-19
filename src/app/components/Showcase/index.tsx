@@ -128,7 +128,7 @@ const Showcase = () => {
                         })}
                       </div>
                     </div>
-                    <div className="flex flex-wrap w-100 gap-2 lg:max-w-[65%]">
+                    <div className="flex flex-wrap w-100 gap-2 ">
                       {sliders[activeSlide].stack.map((e, i) => {
                         return (
                           <motion.div initial={{ opacity: i % 2 == 0 ? '0' : '100' }} animate={{ opacity: 100 }} transition={{ ease: "backInOut", duration: 0.5 }} key={e.name + activeSlide} className={`flex justify-center border border-[#716C6C] rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]`}>

@@ -40,7 +40,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
 
   return (
     <main>
-      <div className="flex w-full">
+      <div className="flex w-full lg:h-[550px]">
         <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-140 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 ">
           <div className="absolute inset-x-0 top-0 w-full h-px"
             style={{
@@ -63,10 +63,10 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
               </a>
             </div>
             <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
-            <a href={link} target='_blank' className='flex justify-center items-end aspect-video'>
-              <div className='max-w-[85%] h-[85%] border-t-1 border-x-1
-                border-[#1c1c1c] rounded-t-md hover:max-w-[90%] hover:h-[90%] hover:translate-y-3 transition-all duration-500 hover:rotate-2 cursor-pointer' style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}>
-                <img className='rounded-t-sm w-full h-full object-fill' src={image} />
+            <a href={link} target='_blank' className='flex justify-center items-end  w-[80%] h-[60%] hover:w-[85%]  hover:h-[65%] hover:translate-y-3 transition-all duration-500 hover:rotate-2'>
+              <div className='w-full h-full border-t-1 border-x-1
+                border-[#1c1c1c] rounded-t-md  ' style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}>
+                <img className='rounded-t-sm w-full h-full object-cover' src={image} />
               </div>
             </a>
           </div>
