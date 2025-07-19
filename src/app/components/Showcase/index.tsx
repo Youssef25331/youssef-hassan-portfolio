@@ -1,10 +1,10 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import ShowcasePanel from './ShowcasePanel'
 import { motion } from 'framer-motion'
 
-interface StackItem {
+export interface StackItem {
   name: string
   icon: string,
 }
@@ -87,21 +87,21 @@ const Showcase = () => {
 
   return (
     <main>
-      <div className="flex justify-center">
-        <div className="flex flex-col gap-8  max-w-7xl">
+      <div className="flex justify-center px-4">
+        <div className="flex flex-col gap-14 max-w-7xl">
           <h1 className='text-6xl text-shadow-main text-center'>Projects I worked on</h1>
           <div className="flex flex-row justify-between">
-            <div className="flex flex-col gap-8 lg:max-w-[65%]">
+            <div className="grid grid-cols-2 gap-6 lg:flex lg:flex-col lg:gap-8 w-full  lg:max-w-[65%]">
               {
                 sliders.map((item, i) => {
                   return (
                     <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
-                      setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} title={sliders[i].title} link={sliders[i].link} />
+                      setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} title={sliders[i].title} link={sliders[i].link} name={sliders[i].projectName} stack={sliders[i].stack} />
                   )
                 })
               }
             </div>
-            <div className="sticky" ref={sliderRef}>
+            <div className="hidden sticky lg:inline" ref={sliderRef}>
               <div className="sticky top-40" ref={sliderChild}>
                 <div className="flex">
                   <div className="my-4 mr-4 h-1 min-w-6 rounded-full"

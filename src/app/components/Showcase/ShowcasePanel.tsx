@@ -1,15 +1,18 @@
 import { useScroll } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import React, { useEffect, useRef } from 'react'
+import { StackItem } from './index'
 
-const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, title, link, setActiveSlider }: {
+const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, title, link, name, stack, setActiveSlider }: {
   sliderRef: React.RefObject<HTMLDivElement | null>,
   sliderChild: React.RefObject<HTMLDivElement | null>,
   color: string,
   image: string,
   setActiveSlider: React.Dispatch<React.SetStateAction<number>>,
   slideNumber: number,
-  title: string
+  title: string,
+  name: string,
+  stack: StackItem[],
   link: string
 }) => {
 
@@ -40,20 +43,19 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
 
   return (
     <main>
-      <div className="flex w-full lg:h-[550px]">
-        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-140 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 ">
+      <div className="flex flex-col justiy-center items-center w-full ">
+        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-80 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
           <div className="absolute inset-x-0 top-0 w-full h-px"
             style={{
               background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
             }}
           ></div>
-          <div className="relative flex flex-col justify-between overflow-hidden items-center bg-cyan-900 w-full h-full rounded-2xl"
+          <div className="relative flex flex-col justify-end lg:justify-between overflow-hidden items-center bg-cyan-900 w-full h-full rounded-2xl"
             style={{ background: `linear-gradient(180deg,${color} 63%, color-mix(in hsl, hsl(from ${color} h s 20%) 100%, ${color} 0%) 80%,color-mix(in hsl, hsl(from ${color} h s 30%) 100%, ${color} 0%) 100%)` }}>
-            <div className="mt-10 mx-7 flex items-center">
+            <div className="hidden mt-10 mx-7 lg:flex lg:items-center">
               <h1
                 className={`text-2xl font-light`}
-                style={{ color: `hsl(from ${color} h s 70%)` }}
-              >
+                style={{ color: `hsl(from ${color} h s 70%)` }}>
                 {title}
               </h1>
               <a href={link} target="_blank">
@@ -63,14 +65,28 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
               </a>
             </div>
             <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)" }}></div>
-            <a href={link} target='_blank' className='flex justify-center items-end  w-[80%] h-[60%] hover:w-[85%]  hover:h-[65%] hover:translate-y-3 transition-all duration-500 hover:rotate-2'>
+            <a href={link} target='_blank' className='flex justify-center items-end  w-[80%]  hover:scale-[1.08]  hover:translate-y-3 transition-all duration-500 hover:rotate-2'>
               <div className='w-full h-full border-t-1 border-x-1
-                border-[#1c1c1c] rounded-t-md  ' style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}>
+                border-[#1c1c1c] rounded-t-md'
+                style={{ boxShadow: `0 0 46px color-mix(in hsl, hsl(from ${color} h s 50%) 100%, ${color} 0%)`, }}>
                 <img className='rounded-t-sm w-full h-full object-cover' src={image} />
               </div>
             </a>
           </div>
         </div>
+        <div id="bottom-disc">
+          <h1 className='text-xl'>{name}</h1>
+          <h1 className='text-white/70'>{title}</h1>
+          <div className="grid grid-cols-5 gap-y-3">
+            {stack.map((e) => {
+              return (
+                <p className='text-xs'>{e.name}</p>
+              )
+
+            })}
+          </div>
+        </div>
+
       </div>
     </main >
   )
