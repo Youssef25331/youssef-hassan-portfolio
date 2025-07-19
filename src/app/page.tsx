@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <SnowfallEffect />
       <LenisScrollProvider />
-      <main className="flex flex-col ">
+      <main className="flex flex-col">
         <div id="hero">
           <Hero />
         </div>
@@ -30,9 +30,7 @@ export default function Home() {
           <About />
           <Widgets />
         </div>
-        <div className="my-15" id="projects">
           <Showcase />
-        </div>
         <Footer />
       </main>
     </>

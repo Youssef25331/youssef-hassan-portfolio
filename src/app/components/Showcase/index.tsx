@@ -87,59 +87,61 @@ const Showcase = () => {
 
   return (
     <main>
-      <div className="flex flex-col justify-center gap-8">
-        <h1 className='text-6xl text-shadow-main text-center'>Projects I worked on</h1>
-        <div className="flex flex-row justify-center gap-6">
-          <div className="flex flex-col gap-8">
-            {
-              sliders.map((item, i) => {
-                return (
-                  <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
-                    setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} title={sliders[i].title} link={sliders[i].link} />
-                )
-              })
-            }
-          </div>
-          <div className="sticky" ref={sliderRef}>
-            <div className="sticky top-40" ref={sliderChild}>
-              <div className="flex">
-                <div className="my-4 mr-4 h-1 min-w-6 rounded-full"
-                  style={{ backgroundColor: sliders[activeSlide].color }}
-                ></div>
-                <div className="flex flex-col w-100 gap-8">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex flex-col gap-2">
-                      <h1 className='text-3xl'>{sliders[activeSlide].projectName}</h1>
-                      <div className="flex flex-col">
-                        <p className='text-md text-base-content/70'>{sliders[activeSlide].projectDescription}</p>
+      <div className="flex justify-center">
+        <div className="flex flex-col gap-8  max-w-7xl">
+          <h1 className='text-6xl text-shadow-main text-center'>Projects I worked on</h1>
+          <div className="flex flex-row justify-between">
+            <div className="flex flex-col gap-8 lg:max-w-[65%]">
+              {
+                sliders.map((item, i) => {
+                  return (
+                    <ShowcasePanel key={sliders[i].projectName} sliderRef={sliderRef} sliderChild={sliderChild} slideNumber={i}
+                      setActiveSlider={setActiveSlide} color={sliders[i].color} image={sliders[i].image} title={sliders[i].title} link={sliders[i].link} />
+                  )
+                })
+              }
+            </div>
+            <div className="sticky" ref={sliderRef}>
+              <div className="sticky top-40" ref={sliderChild}>
+                <div className="flex">
+                  <div className="my-4 mr-4 h-1 min-w-6 rounded-full"
+                    style={{ backgroundColor: sliders[activeSlide].color }}
+                  ></div>
+                  <div className="flex flex-col w-100 gap-8">
+                    <div className="flex flex-col gap-4">
+                      <div className="flex flex-col gap-2">
+                        <h1 className='text-3xl'>{sliders[activeSlide].projectName}</h1>
+                        <div className="flex flex-col">
+                          <p className='text-md text-base-content/70'>{sliders[activeSlide].projectDescription}</p>
+                        </div>
+                      </div>
+                      <div className='flex flex-col gap-2 '>
+                        {sliders[activeSlide].quotes.map((quote, i) => {
+                          return (
+                            <div key={i} className="flex items-center text-sm font-light">
+                              <div className="my-4 mr-4 h-1 min-w-2 rounded-full"
+                                style={{ backgroundColor: sliders[activeSlide].color }}
+                              ></div>
+                              <p>{quote}</p>
+                            </div>
+                          )
+                        })}
                       </div>
                     </div>
-                    <div className='flex flex-col gap-2'>
-                      {sliders[activeSlide].quotes.map((quote, i) => {
+                    <div className="flex flex-wrap w-100 gap-2 lg:max-w-[65%]">
+                      {sliders[activeSlide].stack.map((e, i) => {
                         return (
-                          <div key={i} className="flex items-center text-sm font-light">
-                            <div className="my-4 mr-4 h-1 min-w-2 rounded-full"
-                              style={{ backgroundColor: sliders[activeSlide].color }}
-                            ></div>
-                            <p>{quote}</p>
-                          </div>
+                          <motion.div initial={{ opacity: i % 2 == 0 ? '0' : '100' }} animate={{ opacity: 100 }} transition={{ ease: "backInOut", duration: 0.5 }} key={e.name + activeSlide} className={`flex justify-center border border-[#716C6C] rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]`}>
+                            <div className={`relative w-5 `}>
+                              <Image layout="fill" objectFit="contain" src={e.icon} alt={e.name} />
+                            </div>
+                            <p>
+                              {e.name}
+                            </p>
+                          </motion.div>
                         )
                       })}
                     </div>
-                  </div>
-                  <div className="flex flex-wrap w-100 gap-2">
-                    {sliders[activeSlide].stack.map((e, i) => {
-                      return (
-                        <motion.div initial={{ opacity: i % 2 == 0 ? '0' : '100' }} animate={{ opacity: 100 }} transition={{ ease: "backInOut", duration: 0.5 }} key={e.name + activeSlide} className={`flex justify-center border border-[#716C6C] rounded-3xl px-3 py-1 font-thin gap-2 text-white/70 inset-shadow-[0_0px_10px_rgba(30,30,30,1)]`}>
-                          <div className={`relative w-5 `}>
-                            <Image layout="fill" objectFit="contain" src={e.icon} alt={e.name} />
-                          </div>
-                          <p>
-                            {e.name}
-                          </p>
-                        </motion.div>
-                      )
-                    })}
                   </div>
                 </div>
               </div>
