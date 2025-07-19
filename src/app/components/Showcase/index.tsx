@@ -88,9 +88,9 @@ const Showcase = () => {
   return (
     <main>
       <div className="flex justify-center px-4">
-        <div className="flex flex-col gap-14 max-w-7xl">
-          <h1 className='text-6xl text-shadow-main text-center'>Projects I worked on</h1>
-          <div className="flex flex-row justify-between">
+        <div className="flex flex-col gap-10 lg:gap-24 max-w-7xl">
+          <h1 className='text-5xl lg:text-6xl text-shadow-main text-center'>Projects I worked on</h1>
+          <div className="flex flex-row justify-between gap-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:flex lg:flex-col lg:gap-8 w-full  lg:max-w-[65%]">
               {
                 sliders.map((item, i) => {

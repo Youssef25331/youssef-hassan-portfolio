@@ -80,7 +80,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
           <div className="flex flex-wrap mt-3 gap-2">
             {stack.map((e) => {
               return (
-                <p className={`text-xs w-fit rounded-md px-4 py-1 self-center`}
+                <p key={e.name} className={`text-xs w-fit rounded-md px-4 py-1 self-center`}
 
                   style={{ color: `hsl(from ${color} h s 80%)`, backgroundColor: color }}>
                   {e.name}</p>
