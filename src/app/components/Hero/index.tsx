@@ -4,7 +4,7 @@ import { Sparkles } from "./sparkles"
 
 export default function Hero() {
   return (
-    <div className="h-[100vh] w-full flex justify-center content-center overflow-visible z-10">
+    <div className="h-[100vh] w-full flex justify-center content-center overflow-visible z-10 min-h-[30rem]">
       <div className="relative -z-1 h-full w-full bg-base-100">
         <div className="absolute inset-0"
           style={{ background: "radial-gradient(circle at top,hsl(from var(--color-primary) h s 12%) 0%,var(--color-base-100) 70%,transparent 100%)" }} />

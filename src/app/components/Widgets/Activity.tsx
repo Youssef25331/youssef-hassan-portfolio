@@ -3,7 +3,6 @@ import ActivityCalendar from 'react-activity-calendar'
 
 const Activity = async () => {
   const days = await FetchData()
-
   const data = days
 
   return (

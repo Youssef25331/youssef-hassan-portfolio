@@ -20,11 +20,13 @@ const Widgets = () => {
     <main className='w-full max-w-7xl px-4 mx-auto'>
       <div className='grid w-full grid-cols-6 gap-4 md:max-w-full  md:auto-rows-[19rem] mb-20 md:my-20 max-sm:min-w-[22rem]'>
         <div className="overflow-hidden transition duration-200 border rounded-3xl border-base-200 col-span-6 lg:col-span-4 max-md:h-[18rem]">
-          <div className='group relative w-full h-full flex flex-col justify-center items-center '>
+          <div className='group relative w-full h-full flex flex-col items-center'>
             <WidgetOverlay title='' text='' buttonText='Check it out' url='https://github.com/Youssef25331' >
               <h1 className='absolute max-md:text-lg text-2xl text-shadow-main top-5 md:top-7'>Activity is the heartbeat of innovation</h1>
-              <div className="mt-5">
-                <Activity />
+              <div className="flex w-full h-full justify-center items-center">
+                <div className="mt-5 w-[95%] overflow-scroll">
+                  <Activity />
+                </div>
               </div>
             </WidgetOverlay>
           </div>
