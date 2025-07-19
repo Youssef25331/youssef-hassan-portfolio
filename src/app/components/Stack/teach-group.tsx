@@ -99,7 +99,7 @@ const TechGroup = ({ group }: { group: StackGroup }) => {
           {group.groupName}
         </div>
       </motion.h1>
-      <div className="flex flex-wrap max-lg:basis-full gap-x-3 gap-y-2 w-330">
+      <div className="flex flex-wrap gap-x-3 gap-y-2 max-lg:w-150 w-330">
         {group.items.map((item, index) => (
           <React.Fragment key={item.name}>
             {index % 3 === 0 && <div className="basis-full max-sm:hidden"></div>}

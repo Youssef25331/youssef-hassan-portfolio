@@ -44,7 +44,7 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
   return (
     <main>
       <div className="flex flex-col justiy-center items-center w-full min-w-120">
-        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-100 md:h-80 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
+        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-74 sm:h-100 md:h-80 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
           <div className="absolute inset-x-0 top-0 w-full h-px"
             style={{
               background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"

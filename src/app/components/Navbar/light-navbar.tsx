@@ -20,7 +20,7 @@ export function NavBar({ items, className, scrollTo }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   return (
     <div className="flex">
-      <div className="fixed top-0 mt-7 ml-[15vw] max-md:ml-10">
+      <div className="fixed top-0 mt-7 ml-[10vw] max-md:ml-10">
         <img src="/yh.svg" alt="Logo" className='size-5 md:size-7' /> </div>
       <div
         className={`fixed top-0 left-1/2 -translate-x-1/2 mb-6 pt-6 ${className}`
