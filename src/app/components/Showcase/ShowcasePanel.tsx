@@ -52,9 +52,9 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
           ></div>
           <div className="relative flex flex-col justify-end lg:justify-between overflow-hidden items-center bg-cyan-900 w-full h-full rounded-2xl"
             style={{ background: `linear-gradient(180deg,${color} 63%, color-mix(in hsl, hsl(from ${color} h s 20%) 100%, ${color} 0%) 80%,color-mix(in hsl, hsl(from ${color} h s 30%) 100%, ${color} 0%) 100%)` }}>
-            <div className="hidden mt-10 mx-7 lg:flex lg:items-center">
+            <div className="hidden mt-10 mx-7 lg:flex lg:items-center justify-around w-full px-5">
               <h1
-                className={`text-2xl font-light`}
+                className={`text-2xl font-medium max-w-150`}
                 style={{ color: `hsl(from ${color} h s 70%)` }}>
                 {title}
               </h1>

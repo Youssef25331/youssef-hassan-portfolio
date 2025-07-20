@@ -51,7 +51,7 @@ const Showcase = () => {
       stack: [stacks.NextJS, stacks.React, stacks.FramerMotion, stacks.Tailwind, stacks.Shadcn, stacks.AuthJS],
       image: "/projects/mavoid.png",
       color: "#0c1e36",
-      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      title: "A landing page for our buisniss at MaVoid with an interactive UI ",
       link: "https://mavoid.com"
     },
     {
@@ -61,7 +61,7 @@ const Showcase = () => {
       stack: [stacks.Tailwind, stacks.NextJS, stacks.React, stacks.FramerMotion, stacks.GSAP, stacks.daisyUI, stacks.TypeScript, stacks.Vercel],
       image: "/projects/portfolio.png",
       color: "#0e282a",
-      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      title: "A Striking Portfolio displaying Web Development and User-Centric Design",
       link: ""
     },
 
@@ -71,7 +71,7 @@ const Showcase = () => {
       stack: [stacks.React, stacks.Vercel, stacks.Sass],
       image: "/projects/moviedb.png",
       color: "#571163",
-      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      title: "A Movie/TV platform with real-time updates and trailer previews so you can always know what's new",
       link: "https://github.com/Youssef25331/simple-movie-app"
     },
     {
@@ -80,7 +80,7 @@ const Showcase = () => {
       stack: [stacks.Tailwind, stacks.NodeJS, stacks.React, stacks.GSAP, stacks.Nginx, stacks.ExpressJS, stacks.Shadcn, stacks.MongoDB],
       image: "/projects/mavoidportal.png",
       color: "#22166c",
-      title: "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.",
+      title:"From customer management to financial reporting all the tools you need to run your business efficiently",
       link: "https://portal.mavoid.com"
     }
   ]
