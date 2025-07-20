@@ -55,12 +55,22 @@ const Showcase = () => {
       link: "https://mavoid.com"
     },
     {
+      projectName: 'Kalima Platform',
+      projectDescription: 'Kalma is an e-learning platform designed to empower students from 4th grade primary to 12th grade secondary with a comprehensive range of educational resources. Tailored to support diverse learning needs, it offers engaging lessons, interactive exercises, and personalized study tools to foster academic growth. ',
+      quotes: ["Built with React, TypeScript, and Tailwind CSS and Enhanced with Framer Motion the platform boasts a sleek UI that enhances the learning experience.", "Powered by Express.js, Nginx, and MongoDB, it provides a robust backend to manage student data, teacher profiles, and on-site teaching schedules seamlessly.", "Empowers teachers to oversee all their students and on-site instructors, ensuring comprehensive course management and student progress tracking.", "Flexible credit system where students can purchase credits or access custom offers crafted by teachers, adding personalized learning options."],
+      stack: [stacks.React, stacks.Nginx, stacks.FramerMotion, stacks.MongoDB, stacks.ExpressJS, stacks.TypeScript, stacks.Tailwind,],
+      image: "/projects/kalima.png",
+      color: "#0f5446",
+      title: "A platform connecting students and instructors for enhanced learning experiences.",
+      link: "https://kalima-edu.com"
+    },
+    {
       projectName: 'My Portfolio',
       projectDescription: 'My portfolio featuring cutting-edge web design and exceptional user experience, with polished layouts, fluid animations, and a showcase of my skills and projects using the latest tech.',
       quotes: ["Crafted using Next.js and TypeScript to ensure optimal performance and scalability.", "Showcasing a bold design philosophy, it blends cutting-edge aesthetics with effortless usability.", "Built to impress, it offers a smooth, responsive interface that adapts to every device with elegance."],
       stack: [stacks.Tailwind, stacks.NextJS, stacks.React, stacks.FramerMotion, stacks.GSAP, stacks.daisyUI, stacks.TypeScript, stacks.Vercel],
       image: "/projects/portfolio.png",
-      color: "#0e282a",
+      color: "#0b90d9",
       title: "A Striking Portfolio displaying Web Development and User-Centric Design",
       link: ""
     },
@@ -80,7 +90,7 @@ const Showcase = () => {
       stack: [stacks.Tailwind, stacks.NodeJS, stacks.React, stacks.GSAP, stacks.Nginx, stacks.ExpressJS, stacks.Shadcn, stacks.MongoDB],
       image: "/projects/mavoidportal.png",
       color: "#22166c",
-      title:"From customer management to financial reporting all the tools you need to run your business efficiently",
+      title: "From customer management to financial reporting all the tools you need to run your business efficiently",
       link: "https://portal.mavoid.com"
     }
   ]
@@ -105,7 +115,7 @@ const Showcase = () => {
               <div className="sticky top-40" ref={sliderChild}>
                 <div className="flex">
                   <div className="my-4 mr-4 h-1 min-w-6 rounded-full"
-                    style={{ backgroundColor: sliders[activeSlide].color }}
+                    style={{ backgroundColor: `hsl(from ${sliders[activeSlide].color} h s 18%)` }}
                   ></div>
                   <div className="flex flex-col w-100 gap-8">
                     <div className="flex flex-col gap-4">
@@ -120,7 +130,7 @@ const Showcase = () => {
                           return (
                             <div key={i} className="flex items-center text-sm font-light">
                               <div className="my-4 mr-4 h-1 min-w-2 rounded-full"
-                                style={{ backgroundColor: sliders[activeSlide].color }}
+                                style={{ backgroundColor: `hsl(from ${sliders[activeSlide].color} h s 18%)` }}
                               ></div>
                               <p>{quote}</p>
                             </div>
