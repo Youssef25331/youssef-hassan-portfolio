@@ -4,6 +4,20 @@ import { useEffect, useId, useState } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
 
+declare enum MoveDirection {
+    bottom = "bottom",
+    bottomLeft = "bottom-left",
+    bottomRight = "bottom-right",
+    left = "left",
+    none = "none",
+    right = "right",
+    top = "top",
+    topLeft = "top-left",
+    topRight = "top-right",
+    outside = "outside",
+    inside = "inside"
+}
+
 export function Sparkles({
   className = "",
   size = 1,
@@ -18,6 +32,7 @@ export function Sparkles({
   background = "transparent",
   options = {},
 }) {
+
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
@@ -47,7 +62,7 @@ export function Sparkles({
       },
       move: {
         enable: true,
-        direction: "none",
+        direction: MoveDirection.top ,
         speed: {
           min: minSpeed || speed / 10,
           max: speed,
