@@ -5,7 +5,7 @@ import { LucideGithub, LucideLinkedin, Mail } from 'lucide-react'
 const ContactModal = () => {
   return (
     <dialog id="my_modal_5" className="modal backdrop-blur-[4px] modal-bottom">
-      <SmoothCursor />
+      {/* <SmoothCursor /> */}
       <div className="modal-box w-120 gap-3 flex flex-col  mx-auto border border-base-200 border-b-transparent rounded-t-2xl bg-[#121212] ">
         <div className="flex gap-3 text-white/70 justify-center">
           <a className='hover:text-white ' href='https://github.com/Youssef25331'>
