@@ -5,7 +5,7 @@ import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
 
 export function Sparkles({
-  className,
+  className = "",
   size = 1,
   minSize = null,
   density = 100,
@@ -47,7 +47,7 @@ export function Sparkles({
       },
       move: {
         enable: true,
-        direction: "none",
+        direction: 0,
         speed: {
           min: minSpeed || speed / 10,
           max: speed,

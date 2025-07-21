@@ -107,7 +107,7 @@ export function NavBar({ items, className, scrollTo }: NavBarProps) {
 
           <div
 
-            onClick={() => document.getElementById('my_modal_5').showModal()}
+            onClick={() => (document.getElementById('my_modal_5') as any).showModal()}
             className={`items-center justify-center gap-2 relative inline-block h-full cursor-pointer rounded-full px-4 py-2 font-medium text-xs  transition-all duration-300 bg-base-200/40 text-white/70 hover:bg-base-200/60 hover:text-white`}
           >
             <span className="">Contact</span>
