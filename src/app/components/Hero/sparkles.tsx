@@ -4,7 +4,7 @@ import { useEffect, useId, useState } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
 
-declare enum MoveDirection {
+enum MoveDirection {
     bottom = "bottom",
     bottomLeft = "bottom-left",
     bottomRight = "bottom-right",
@@ -62,7 +62,7 @@ export function Sparkles({
       },
       move: {
         enable: true,
-        direction: MoveDirection.top ,
+        direction: MoveDirection.none ,
         speed: {
           min: minSpeed || speed / 10,
           max: speed,
