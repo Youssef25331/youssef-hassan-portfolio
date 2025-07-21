@@ -17,7 +17,7 @@ export default function Home() {
       <ContactModal/>
       <SnowfallEffect />
       <div className="z-200 fixed">
-        <SmoothCursor />
+        {/* <SmoothCursor /> */}
         <NavBarLoader />
       </div>
       <LenisScrollProvider />
