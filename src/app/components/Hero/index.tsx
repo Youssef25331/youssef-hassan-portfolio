@@ -37,7 +37,7 @@ export default function Hero() {
             </div>
             <div className="mt-2 lg:mt-6">
               <span className="text-white/70 text-xl">
-                Hi, I'm Youssef Hassan and Full Stack Developer and Software Engineer
+                Hi, I'm Youssef Hassan a Full Stack Developer and Software Engineer
               </span>
             </div >
           </div>

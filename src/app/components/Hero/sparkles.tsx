@@ -47,7 +47,7 @@ export function Sparkles({
       },
       move: {
         enable: true,
-        direction: 0,
+        direction: "none",
         speed: {
           min: minSpeed || speed / 10,
           max: speed,
