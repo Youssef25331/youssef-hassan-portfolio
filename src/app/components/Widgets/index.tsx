@@ -37,7 +37,7 @@ const Widgets = () => {
           </WidgetOverlay>
         </div>
         <div className='group max-sm:h-[19rem]  relative border rounded-3xl border-base-200 col-span-6 sm:col-span-3  lg:col-span-2 overflow-hidden  flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200 '>
-          <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' iconName='notebookPen' >
+          <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' url='https://www.youtube.com/watch?v=dQw4w9WgXcQ' iconName='notebookPen' >
             <ToolsWidget delay={60} group={toolGroup} />
           </WidgetOverlay>
         </div>
