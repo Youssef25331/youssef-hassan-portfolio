@@ -6,7 +6,7 @@ const Activity = async () => {
   const data = days
 
   return (
-    <ActivityCalendar blockSize={11} colorScheme='dark' data={data} theme={{
+    <ActivityCalendar blockSize={10.5} colorScheme='dark' data={data} theme={{
       light: ['hsl(0, 0%, 92%)', 'firebrick'],
       dark: ['var(--color-base-200)', 'var(--color-primary)'],
     }} />

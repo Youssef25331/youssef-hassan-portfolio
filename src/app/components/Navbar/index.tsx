@@ -17,7 +17,6 @@ export function NavBarLoader() {
     { name: 'Stack', url: '#stack', },
     { name: 'About', url: '#about', },
     { name: 'Projects', url: '#projects', },
-    { name: 'Footer', url: '#footer', }
   ]
 
   return <NavBar items={navItems} scrollTo={scrollTo} />

@@ -17,7 +17,7 @@ const Footer = () => {
 
   return (
     <>
-      <div id="footer">
+      <div id="footer" className='mt-10'>
         <div className=''>
           <div className={'relative py-40 bg-cover bg-center w-full  bg-[url("/backgrounds/dark.png")]  flex flex-col justify-center items-center'} >
             <div className={'relative flex flex-col h-full w-full justify-center items-center gap-2 py-10 max-w-6xl z-2 '}>

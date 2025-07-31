@@ -43,18 +43,18 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
 
   return (
     <main>
-      <div className="flex flex-col justiy-center items-center w-full min-w-120">
-        <div ref={showcaseRef} className="relative flex bg-[#121212] w-full h-74 sm:h-100 md:h-80 p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
+      <div className="flex flex-col justiy-center items-center w-full">
+        <div ref={showcaseRef} className="relative flex bg-[#121212]  w-full h-74 sm:h-100 md:h-[30vw] p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
           <div className="absolute inset-x-0 top-0 w-full h-px"
             style={{
               background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
             }}
           ></div>
           <div className="relative flex flex-col justify-end lg:justify-between overflow-hidden items-center bg-cyan-900 w-full h-full rounded-2xl"
-            style={{ background: `linear-gradient(180deg,${color} 63%, color-mix(in hsl, hsl(from ${color} h s 20%) 100%, ${color} 0%) 80%,color-mix(in hsl, hsl(from ${color} h s 30%) 100%, ${color} 0%) 100%)` }}>
-            <div className="hidden mt-10 mx-7 lg:flex lg:items-center">
+            style={{ background: `linear-gradient(180deg,hsl(from ${color} h s 14%) 63%, hsl(from ${color} h s 18%) 80%,hsl(from ${color} h s 25%)  100%)` }}>
+            <div className="hidden mt-10 mx-7 lg:flex lg:items-center justify-around w-full px-5">
               <h1
-                className={`text-2xl font-light`}
+                className={`text-2xl font-medium max-w-150`}
                 style={{ color: `hsl(from ${color} h s 70%)` }}>
                 {title}
               </h1>
@@ -80,9 +80,9 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
           <div className="flex flex-wrap mt-3 gap-2">
             {stack.map((e) => {
               return (
-                <p className={`text-xs w-fit rounded-md px-4 py-1 self-center`}
+                <p key={e.name} className={`text-xs w-fit rounded-md px-4 py-1 self-center`}
 
-                  style={{ color: `hsl(from ${color} h s 80%)`, backgroundColor: color }}>
+                  style={{ color: `hsl(from ${color} h s 80%)`, backgroundColor: `hsl(from ${color} h s 18%)` }}>
                   {e.name}</p>
               )
 

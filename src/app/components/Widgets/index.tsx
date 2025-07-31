@@ -17,15 +17,15 @@ const Widgets = () => {
     { name: 'KeePassXC', icon: '/tools/keepassxc.png' }
   ]
   return (
-    <main className='w-full max-w-7xl px-4 mx-auto'>
+    <main className='w-full max-md:mt-6 max-w-7xl px-4 mx-auto'>
       <div className='grid w-full grid-cols-6 gap-4 md:max-w-full  md:auto-rows-[19rem] mb-20 md:my-20 max-sm:min-w-[22rem]'>
         <div className="overflow-hidden transition duration-200 border rounded-3xl border-base-200 col-span-6 lg:col-span-4 max-md:h-[18rem]">
           <div className='group relative w-full h-full flex flex-col items-center'>
             <WidgetOverlay title='' text='' buttonText='Check it out' url='https://github.com/Youssef25331' >
               <h1 className='absolute max-md:text-lg text-2xl text-shadow-main top-5 md:top-7'>Activity is the heartbeat of innovation</h1>
               <div className="flex w-full h-full justify-center items-center">
-                <div className="mt-5 w-[95%] overflow-scroll">
-                  {/* <Activity /> */}
+                <div className="mt-5  overflow-scroll">
+                  <Activity />
                 </div>
               </div>
             </WidgetOverlay>
@@ -37,7 +37,7 @@ const Widgets = () => {
           </WidgetOverlay>
         </div>
         <div className='group max-sm:h-[19rem]  relative border rounded-3xl border-base-200 col-span-6 sm:col-span-3  lg:col-span-2 overflow-hidden  flex inset-shadow-[0_0px_50px_rgba(30,30,30,1)] hover:inset-shadow-[0_0px_100px_rgba(30,30,30,1)] duration-200 '>
-          <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' iconName='notebookPen' >
+          <WidgetOverlay title='Tools' text='Some of my favorite tools out there' buttonText='Connect Now' url='https://www.youtube.com/watch?v=dQw4w9WgXcQ' iconName='notebookPen' >
             <ToolsWidget delay={60} group={toolGroup} />
           </WidgetOverlay>
         </div>
