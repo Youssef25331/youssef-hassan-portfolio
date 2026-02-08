@@ -89,13 +89,14 @@ const TechGroup = ({ group }: { group: StackGroup }) => {
   }, [scrollY, h1Opacity, h1Y])
 
   return (
-    <div className="flex mb-10 min-w-125">
+    <div className="flex mb-10 min-sm:min-w-125">
       <motion.h1
+
         ref={h1Ref}
         initial={{ opacity: 0, y: h1InitialY }}
         style={{ opacity: h1Opacity, y: h1Y }}
         className="text-4xl md:text-6xl font-bold text-shadow-main basis-full flex justify-start lg:justify-center ">
-        <div className="flex md:w-[55vw] lg:w-66">
+        <div className="flex w-[55vw]  lg:w-66">
           {group.groupName}
         </div>
       </motion.h1>
