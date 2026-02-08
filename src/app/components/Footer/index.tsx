@@ -20,7 +20,7 @@ const Footer = () => {
       <div id="footer" className='mt-10'>
         <div className=''>
           <div className={'relative py-40 bg-cover bg-center w-full  bg-[url("/backgrounds/dark.png")]  flex flex-col justify-center items-center'} >
-            <div className={'relative flex flex-col h-full w-full justify-center items-center gap-2 py-10 max-w-6xl z-2 '}>
+            <div className={'relative flex flex-col h-full w-full justify-center items-center gap-2 py-10 max-w-6xl z-2 text-center'}>
               <p className='text-2xl text-sm:text-3xl md:text-4xl lg:text-5xl font-semibold'>I will help unleash Your Wildest ideas</p>
               <p className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 mt-3 font-semibold'>Let's make it together!</p>
               <AnimatedButton text="Let's Connect" />
