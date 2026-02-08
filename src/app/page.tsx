@@ -11,6 +11,15 @@ import SnowfallEffect from "./components/SnowfallEffect";
 import { SmoothCursor } from "./components/Cursor";
 import ContactModal from "./components/ContactModal";
 
+import type { Viewport } from 'next'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
+
 export default function Home() {
   return (
     <>
