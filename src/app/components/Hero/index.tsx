@@ -33,15 +33,15 @@ export default function Hero() {
           </p>
         </div>
         <div className="text-center text-foreground">
-          <div className="w-110 md:w-full">
-            <div className="text-4xl lg:text-6xl font-bold">
+          <div className="w-full">
+            <div className="max-sm:text-2xl text-4xl lg:text-6xl font-bold">
               Transform your ideas into
             </div>
-            <div className="text-4xl lg:text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[color:hsl(from_var(--color-primary)_h_s_18%)] pb-2">
+            <div className="max-sm:text-2xl text-4xl lg:text-6xl font-bold mt-3 text-transparent bg-clip-text bg-gradient-to-b from-white to-[color:hsl(from_var(--color-primary)_h_s_18%)] pb-2">
               Beautiful digital experiences
             </div>
             <div className="mt-2 lg:mt-6">
-              <span className="text-white/70 text-xl">
+              <span className="text-white/70 text-xl max-sm:text-sm">
                 Hi, I'm Youssef Hassan a Full Stack Developer and Software Engineer
               </span>
             </div >
