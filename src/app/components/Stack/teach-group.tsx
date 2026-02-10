@@ -1,5 +1,4 @@
 "use client"
-// Works well for now but should concider moving to gsap for better animations
 
 import React, { useRef, useEffect } from 'react'
 import Image from 'next/image'
