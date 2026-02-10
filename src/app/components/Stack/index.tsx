@@ -1,12 +1,13 @@
 import React from 'react'
 import TechGroup from './teach-group'
-import Spinner from '../Spinner'
+import TechTop from './techTop'
 
 function Stack() {
   const frontend = {
     groupName: "FRONTEND",
     items: [{ name: "React", icon: '/tech/react.png' }, { name: "Javascript", icon: '/tech/javascript.png' }, { name: "Typescript", icon: '/tech/typescript.png' },
-    { name: "Tailwind CSS", icon: '/tech/tailwind.png' }, { name: 'Sass', icon: '/tech/sass.png' }, { name: 'Next.js', icon: '/tech/next.png' }, { name: 'Redux', icon: '/tech/redux.png' }]
+    { name: "Tailwind CSS", icon: '/tech/tailwind.png' }, { name: 'Sass', icon: '/tech/sass.png' }, { name: 'Next.js', icon: '/tech/next.png' }, { name: 'Redux', icon: '/tech/redux.png' }],
+
   }
   const backend = {
     groupName: "BACKEND",
@@ -24,15 +25,7 @@ function Stack() {
 
   return (
     <main id='stack'>
-      <div className="flex justify-center ">
-        <div className='flex text-shadow-main text-sm md:text-lg lg:text-2xl justify-start lg:justify-center basis-full'>
-          <div className="flex w-66 gap-2 items-center">
-            <Spinner />
-            <h1>MY STACK</h1>
-          </div>
-        </div>
-        <div className='max-lg:basis-full w-330' />
-      </div>
+      <TechTop></TechTop>
       <div className='flex flex-col gap-8 md:gap-15 lg:gap-30 mt-4'>
         <TechGroup group={frontend} />
         <TechGroup group={backend} />
