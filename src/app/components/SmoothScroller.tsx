@@ -1,51 +1,38 @@
-"use client"
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
-import { NavBarLoader } from './Navbar'
+"use client";
 
-const SmoothScroller: React.FC<{ children: React.ReactNode }> = ({ children, }) => {
-  const contentRef = useRef<HTMLDivElement>(null)
-  const [contentHeight, setContentHeight] = useState(0)
-  const [windowHeight, setWidnowHeight] = useState(0)
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother"; // Premium Plugin
+import { useGSAP } from "@gsap/react";
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (contentRef.current != null) {
-        setContentHeight(contentRef.current.scrollHeight)
-      }
-      setWidnowHeight(window.innerHeight)
-    }
+// Register plugins globally to avoid issues with React Strict Mode
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    handleResize()
+export default function SmoothScroller({ children }: { children: React.ReactNode }) {
+  const wrapperRef = useRef(null);
+  const contentRef = useRef(null);
 
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [contentRef])
+  useGSAP(() => {
+    // ScrollSmoother.create returns the instance, but we don't need to store it 
+    // unless we want to call methods on it later.
+    ScrollSmoother.create({
+      wrapper: wrapperRef.current,
+      content: contentRef.current,
+      smooth: 1.5, // How long (in seconds) it takes to "catch up" to the native scroll position
+      effects: true, // Looks for data-speed and data-lag attributes on elements
+      smoothTouch: 0.1, // Optional: creates a slight smoothing on touch devices
+    });
 
-  const { scrollYProgress } = useScroll();
-
-  const smoothProgress = useSpring(scrollYProgress.get(), {
-    mass: 0.0001,
-    stiffness: 1000,
-    damping: 100,
-  })
-
-  const y = useTransform(smoothProgress, (value) => {
-    return value * -(contentHeight - windowHeight)
-  })
+    // Clean up is handled automatically by useGSAP!
+  }, { scope: wrapperRef }); // Scope is optional but good practice
 
   return (
-    <>
-      <div style={{ height: contentHeight }}></div>
-      <motion.div ref={contentRef}
-        style={{ y: y }}
-        className='top-0 fixed w-screen flex flex-row'>
+    // Essential DOM structure for ScrollSmoother
+    <div id="smooth-wrapper" ref={wrapperRef}>
+      <div id="smooth-content" ref={contentRef}>
         {children}
-      </motion.div >
-    </>
-  )
+      </div>
+    </div>
+  );
 }
-
-export default SmoothScroller
