@@ -31,7 +31,7 @@ const TechItem = ({ item, index }: TechItemProps) => {
   const ref = useRef<HTMLHeadingElement>(null)
   useGSAP(() => {
 
-    gsap.set(".stack-item", { opacity: 0, y: 60 });
+    gsap.set(".stack-item", { opacity: 0, y: 60 + (10) * index });
     gsap.to('.stack-item', {
       scrollTrigger: {
         trigger: '.stack-item',
