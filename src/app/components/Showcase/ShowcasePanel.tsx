@@ -2,6 +2,11 @@ import { useScroll } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import React, { useEffect, useRef } from 'react'
 import { StackItem } from './index'
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, title, link, name, stack, setActiveSlider }: {
   sliderRef: React.RefObject<HTMLDivElement | null>,
@@ -17,8 +22,23 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
 }) => {
 
   const showcaseRef = useRef<HTMLDivElement>(null)
+  const showcaseContainer = useRef<HTMLDivElement>(null)
 
   const { scrollY } = useScroll()
+
+  useGSAP(() => {
+    gsap.set(".showcase-panel", { opacity: 0,  scale: 0.5 });
+    gsap.to('.showcase-panel', {
+      scrollTrigger: {
+        trigger: ".showcase-panel",
+        toggleActions: "play none none reverse",
+      },
+      scale: 1,
+      opacity: 1,
+      duration: 0.3,
+    })
+
+  }, { scope: showcaseContainer })
 
   useEffect(() => {
 
@@ -42,9 +62,9 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
   }, [scrollY])
 
   return (
-    <main>
-      <div className="flex flex-col justiy-center items-center w-full">
-        <div ref={showcaseRef} className="relative flex bg-[#121212]  w-full h-74 sm:h-100 md:h-[30vw] p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
+    <main ref={showcaseContainer}>
+      <div className="flex flex-col justiy-center items-center w-full showcase-panel">
+        <div ref={showcaseRef} className="relative flex bg-[#121212]  w-full h-[58vw] sm:h-100 md:h-[30vw] p-2 justify-center items-center rounded-3xl border border-base-200 lg:mx-10 lg:h-[550px]">
           <div className="absolute inset-x-0 top-0 w-full h-px"
             style={{
               background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 5%, rgba(255, 255, 255, 0.8) 35%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.8) 65%, rgba(0, 0, 0, 0) 95%)"
@@ -81,7 +101,6 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
             {stack.map((e) => {
               return (
                 <p key={e.name} className={`text-xs w-fit rounded-md px-4 py-1 self-center`}
-
                   style={{ color: `hsl(from ${color} h s 80%)`, backgroundColor: `hsl(from ${color} h s 18%)` }}>
                   {e.name}</p>
               )

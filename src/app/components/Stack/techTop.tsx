@@ -11,13 +11,12 @@ gsap.registerPlugin(ScrollTrigger)
 const TechTop = () => {
   useGSAP(
     () => {
-      gsap.set(".stack-flower", { opacity: 0, y: 20 });
+      gsap.set(".stack-indicator", { opacity: 0, y: 20 });
 
-      gsap.to('.stack-flower', {
+      gsap.to('.stack-indicator', {
         scrollTrigger: {
-          trigger: ".stack-flower",
+          trigger: ".stack-indicator",
           toggleActions: "play none none reverse",
-          markers: true
         },
         y: 0,
         opacity: 1,
@@ -26,7 +25,7 @@ const TechTop = () => {
     }
   )
   return (
-    <div className="flex justify-center stack-flower">
+    <div className="flex justify-center stack-indicator">
       <div className='flex text-shadow-main text-sm md:text-lg lg:text-2xl justify-start lg:justify-center basis-full'>
         <div className="flex w-66 gap-2 items-center">
           <Spinner />
