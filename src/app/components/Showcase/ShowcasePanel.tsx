@@ -27,14 +27,13 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
   const { scrollY } = useScroll()
 
   useGSAP(() => {
-    gsap.set(".showcase-panel", { opacity: 0,  scale: 0.5 });
+    gsap.set(".showcase-panel", { scale: 0.4 });
     gsap.to('.showcase-panel', {
       scrollTrigger: {
         trigger: ".showcase-panel",
         toggleActions: "play none none reverse",
       },
       scale: 1,
-      opacity: 1,
       duration: 0.3,
     })
 
@@ -43,8 +42,8 @@ const ShowcasePanel = ({ sliderRef, sliderChild, slideNumber, color, image, titl
   useEffect(() => {
 
     const updateAnimation = () => {
-      if (showcaseRef.current && sliderRef.current && sliderChild.current) {
-        const elementTop = showcaseRef.current.offsetTop
+      if (showcaseContainer.current && showcaseRef.current && sliderRef.current && sliderChild.current) {
+        const elementTop = showcaseContainer.current.offsetTop
         const elementHeight = showcaseRef.current.offsetHeight
         const sliderTop = sliderRef.current.offsetTop
         const sliderChildTop = sliderChild.current.offsetTop
